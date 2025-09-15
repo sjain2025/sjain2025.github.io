@@ -74,12 +74,6 @@ const Awards = () => {
     }
   ];
 
-  const stats = [
-    { number: "5+", label: "Major Awards", description: "National and International Recognition" },
-    { number: "20K+", label: "Competitors", description: "Outperformed in Meta Hacker Cup" },
-    { number: "1st", label: "Place Winner", description: "Congressional App Challenge" },
-    { number: "100%", label: "Success Rate", description: "In Major Competitions Entered" }
-  ];
 
   return (
     <section id="awards" className="py-20">
@@ -89,20 +83,6 @@ const Awards = () => {
             Awards & <span className="text-gradient">Recognition</span>
           </h2>
 
-          {/* Stats Overview */}
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className="card-gradient rounded-xl p-6 text-center shadow-soft hover:shadow-medium transition-smooth animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-3xl font-bold text-gradient mb-2">{stat.number}</div>
-                <div className="font-semibold text-foreground mb-1">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.description}</div>
-              </div>
-            ))}
-          </div>
 
           {/* Awards List */}
           <div className="space-y-8">
@@ -152,18 +132,6 @@ const Awards = () => {
             ))}
           </div>
 
-          {/* Recognition Summary */}
-          <div className="mt-16 text-center card-gradient rounded-xl p-8 shadow-medium">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Consistent Recognition for Excellence
-            </h3>
-            <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              These awards reflect a consistent pattern of excellence across multiple domains - from government 
-              recognition for innovation to technical achievements in IEEE conferences, competitive programming 
-              success, and hackathon victories. Each recognition demonstrates not just individual achievement, 
-              but a commitment to pushing boundaries and creating meaningful impact through technology.
-            </p>
-          </div>
         </div>
       </div>
     </section>

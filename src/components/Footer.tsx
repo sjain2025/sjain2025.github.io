@@ -26,8 +26,8 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold text-gradient mb-4">Soham Jain</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
-              Computer Science student at Carnegie Mellon University, AI researcher, 
-              and entrepreneur passionate about building innovative solutions that make a real impact.
+              Computer Science at Carnegie Mellon University, software developer, AI researcher, 
+              and entrepreneur.
             </p>
             
             {/* Social Links */}
@@ -48,7 +48,7 @@ const Footer = () => {
                 className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
                 asChild
               >
-                <a href="https://linkedin.com/in/sohamjain" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/soham-jain1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
@@ -58,7 +58,7 @@ const Footer = () => {
                 className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
                 asChild
               >
-                <a href="https://github.com/sohamjain" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/sjain2025" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
@@ -91,9 +91,7 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center text-muted-foreground text-sm">
-            <span>Made with</span>
-            <Heart className="h-4 w-4 text-red-500 mx-1" />
-            <span>using React, TypeScript & Tailwind CSS</span>
+            <span>Made using React, TypeScript & Tailwind CSS</span>
           </div>
         </div>
       </div>

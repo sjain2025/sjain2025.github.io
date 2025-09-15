@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -26,16 +27,63 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      // Check if EmailJS is configured
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      
+      if (!serviceId || !templateId || !publicKey) {
+        // Fallback to mailto if EmailJS is not configured
+        const mailtoLink = `mailto:sohamj@andrew.cmu.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
+        window.location.href = mailtoLink;
+        
+        toast({
+          title: "Opening Email Client",
+          description: "Your default email client will open with the message pre-filled.",
+        });
+        
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        return;
+      }
+      
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'sohamj@andrew.cmu.edu'
+      };
+      
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      
+      // Fallback to mailto on error
+      const mailtoLink = `mailto:sohamj@andrew.cmu.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Opening Email Client",
+        description: "There was an issue with the form. Your email client will open instead.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -63,14 +111,14 @@ const Contact = () => {
     {
       icon: <Github className="h-6 w-6" />,
       label: "GitHub",
-      url: "https://github.com/sohamjain",
-      username: "@sohamjain"
+      url: "https://github.com/sjain2025",
+      username: "@sjain2025"
     },
     {
       icon: <Linkedin className="h-6 w-6" />,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/sohamjain",
-      username: "in/sohamjain"
+      url: "https://www.linkedin.com/in/soham-jain1/",
+      username: "in/soham-jain1"
     }
   ];
 
@@ -90,8 +138,7 @@ const Contact = () => {
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   I'm always interested in discussing new opportunities, innovative projects, 
                   research collaborations, or just connecting with fellow developers and researchers. 
-                  Whether you're looking for a collaborator, have a question about my work, or 
-                  want to explore potential partnerships, I'd love to hear from you.
+                  Feel free to reach out!
                 </p>
               </div>
 
@@ -143,15 +190,6 @@ const Contact = () => {
                     </a>
                   ))}
                 </div>
-              </div>
-
-              {/* Quick Response Promise */}
-              <div className="card-gradient rounded-xl p-6 shadow-soft">
-                <h4 className="font-semibold text-foreground mb-2">Quick Response Promise</h4>
-                <p className="text-sm text-muted-foreground">
-                  I typically respond to emails within 24 hours. For urgent matters, 
-                  feel free to mention it in your subject line.
-                </p>
               </div>
             </div>
 

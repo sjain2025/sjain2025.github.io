@@ -167,37 +167,52 @@
 
   .animate-fade-up {
     animation: fade-up 0.6s ease-out;
+    will-change: transform, opacity;
   }
 
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out;
+    animation: fade-in 0.6s ease-out;
+    will-change: opacity;
   }
 
   .animate-slide-in {
-    animation: slide-in 0.6s ease-out;
+    animation: slide-in 0.5s ease-out;
+    will-change: transform, opacity;
   }
 
   .animate-typing {
-    animation: typing 2s steps(12, end);
+    animation: typing 1.5s steps(12, end);
+    will-change: width;
   }
 
   .animate-typing-blink {
-    animation: typing 2s steps(12, end), blink 0.75s step-end infinite;
+    animation: typing 0.8s linear, blink 1s step-end infinite;
+    will-change: width, border-color;
   }
 
   .animate-float {
     animation: float 3s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Optimized background image loading */
+  .hero-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 
 @keyframes fade-up {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -213,20 +228,20 @@
 @keyframes slide-in {
   0% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translate3d(-30px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes typing {
-  from {
+  0% {
     width: 0;
   }
-  to {
-    width: 100%;
+  100% {
+    width: 9.5ch; /* Precise width to stop at end of last letter */
   }
 }
 
@@ -241,9 +256,9 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translate3d(0, -10px, 0);
   }
 }

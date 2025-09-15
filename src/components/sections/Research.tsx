@@ -173,26 +173,6 @@ const Research = () => {
               </div>
             ))}
           </div>
-
-          {/* Research Stats */}
-          <div className="grid md:grid-cols-4 gap-6 mt-16">
-            {[
-              { number: "4", label: "Published Papers", sublabel: "IEEE & Academic Journals" },
-              { number: "1", label: "Best Paper Award", sublabel: "IEEE Conference Recognition" },
-              { number: "3", label: "First Author", sublabel: "Lead Research Publications" },
-              { number: "2", label: "Research Labs", sublabel: "Virginia Tech & GMU Collaboration" }
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className="card-gradient rounded-xl p-6 text-center animate-fade-up"
-                style={{ animationDelay: `${index * 0.1 + 0.8}s` }}
-              >
-                <div className="text-3xl font-bold text-gradient mb-2">{stat.number}</div>
-                <div className="font-semibold text-foreground mb-1">{stat.label}</div>
-                <div className="text-sm text-muted-foreground">{stat.sublabel}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

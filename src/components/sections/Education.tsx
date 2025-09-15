@@ -6,12 +6,12 @@ const Education = () => {
       institution: "Carnegie Mellon University",
       location: "Pittsburgh, PA",
       degree: "Bachelor of Science in Computer Science",
-      period: "2024 - December 2027",
-      description: "Pursuing comprehensive CS education at one of the world's top computer science programs",
+      period: "December 2027",
       achievements: [
-        "School of Computer Science",
-        "Expected Graduation: 2028",
-        "Focus on AI and Machine Learning"
+        "GPA: 4.0",
+        "Software Developer at Scotty Labs on the CMUEats project",
+        "Association of Computing Machinery Tech Developer",
+        "Spikeball and Pickleball Club"
       ]
     },
     {
@@ -19,13 +19,12 @@ const Education = () => {
       location: "Alexandria, VA",
       degree: "High School Diploma",
       period: "",
-      description: "Specialized STEM education with exceptional academic performance and leadership roles",
+      description: "",
       achievements: [
         "4.535 Weighted GPA",
         "4.0/4.0 Unweighted GPA", 
         "Captain of Congressional Debate",
-        "Student Government Association Executive Committee",
-        "Policy Specialist"
+        "Student Government Association Policy Specialist & Executive Committee",
       ]
     }
   ];

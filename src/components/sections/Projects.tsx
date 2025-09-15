@@ -76,7 +76,7 @@ const Projects = () => {
               <Dialog key={index}>
                 <DialogTrigger asChild>
                   <div 
-                    className="card-gradient rounded-xl p-8 shadow-medium hover:shadow-hard transition-smooth group animate-fade-up cursor-pointer"
+                    className="card-gradient rounded-xl p-8 shadow-medium hover:shadow-hard hover:bg-primary/5 hover:border-primary/20 border border-transparent transition-smooth group animate-fade-up cursor-pointer"
                     style={{ animationDelay: `${index * 0.2}s` }}
                   >
                     {/* Project Header */}
@@ -203,7 +203,7 @@ const Projects = () => {
               className="hover:scale-105 transition-bounce"
               asChild
             >
-              <a href="https://github.com/sohamjain" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/sjain2025" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 mr-2" />
                 View All Projects
               </a>

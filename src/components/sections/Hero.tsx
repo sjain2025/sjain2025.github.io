@@ -1,7 +1,7 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
-import profileImage from '@/assets/profile.png';
+import profileImage from '@/assets/8898.jpg';
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -10,108 +10,142 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden">
+    <section id="hero" className="h-screen relative flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 hero-bg"
         style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundImage: `url(${heroImage})`
         }}
       >
         <div className="absolute inset-0 bg-background/80"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Profile Image */}
-          <div className="mb-8 animate-fade-up">
-            <img 
-              src={profileImage} 
-              alt="Soham Jain" 
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto shadow-hard border-4 border-primary/20"
-            />
+      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col justify-center h-full">
+        <div className="max-w-6xl mx-auto">
+          {/* Main Content - Profile Image and Text Side by Side */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-8">
+            {/* Profile Image */}
+            <div className="flex-shrink-0 animate-fade-up [animation-delay:0.05s]">
+              <img 
+                src={profileImage} 
+                alt="Soham Jain" 
+                className="w-60 h-60 md:w-68 md:h-68 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-3xl shadow-hard border-4 border-primary/20 object-cover object-center scale-[1.13]"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            
+            {/* Text Content */}
+            <div className="flex-1 text-center lg:text-left max-w-2xl mt-14">
+              <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-up [animation-delay:0.05s]">
+                <span className="inline-block overflow-hidden border-r-4 border-primary whitespace-nowrap animate-typing-blink">
+                  Soham Jain
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-10 animate-fade-up [animation-delay:0.05s]">
+                Computer Science @ Carnegie Mellon University
+              </p>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 animate-fade-up [animation-delay:0.05s]">
+              Ambitious computer scientist with a passion for software development and artificial intelligence. Leveraging
+              interpersonal skills and technical proficiency to innovate modern solutions to real-world problems.
+              </p>
+            </div>
           </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up [animation-delay:0.2s]">
-            <span className="inline-block overflow-hidden border-r-4 border-primary whitespace-nowrap animate-typing-blink">
-              Hi, I'm Soham Jain
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-up [animation-delay:0.2s]">
-            Computer Science Student at Carnegie Mellon University
-          </p>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-up [animation-delay:0.4s]">
-            Passionate about AI, machine learning, and building innovative solutions. 
-            Currently developing cutting-edge applications at Vytal.AI and conducting 
-            research in quantum computing and neural networks.
-          </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-up [animation-delay:0.6s]">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 animate-fade-up [animation-delay:0.05s]">
             <Button 
               size="lg"
-              className="primary-gradient hover:scale-105 transition-bounce shadow-medium hover:shadow-hard px-8 py-6 text-lg"
+              className="group relative overflow-hidden primary-gradient hover:scale-105 transition-all duration-300 shadow-medium hover:shadow-hard px-10 py-6 text-lg font-semibold rounded-2xl border-0 hover:glow"
               onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View My Work
+              <span className="relative z-10 flex items-center gap-2">
+                View My Work
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
             <Button 
               size="lg"
               variant="outline"
-              className="hover:scale-105 transition-bounce px-8 py-6 text-lg"
+              className="group relative overflow-hidden hover:scale-105 transition-all duration-300 px-10 py-6 text-lg font-semibold rounded-2xl border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 backdrop-blur-sm hover:text-white"
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Get In Touch
+              <span className="relative z-10 flex items-center gap-2">
+                Get In Touch
+                <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-16 animate-fade-up [animation-delay:0.8s]">
+          <div className="flex justify-center space-x-4 mb-8 animate-fade-up [animation-delay:0.05s]">
             <Button 
               variant="ghost" 
               size="icon"
-              className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
+              className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-14 h-14 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
               asChild
             >
               <a href="mailto:sohamj@andrew.cmu.edu" aria-label="Email">
-                <Mail className="h-5 w-5" />
+                <Mail className="h-6 w-6 transition-colors group-hover:text-primary" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </Button>
             <Button 
               variant="ghost" 
               size="icon"
-              className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
+              className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-14 h-14 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
               asChild
             >
-              <a href="https://linkedin.com/in/sohamjain" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
+              <a href="https://www.linkedin.com/in/soham-jain1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="h-6 w-6 transition-colors group-hover:text-primary" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </Button>
             <Button 
               variant="ghost" 
               size="icon"
-              className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
+              className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-14 h-14 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
               asChild
             >
-              <a href="https://github.com/sohamjain" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5" />
+              <a href="https://github.com/sjain2025" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Github className="h-6 w-6 transition-colors group-hover:text-primary" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-14 h-14 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
+              asChild
+            >
+              <a href="https://www.youtube.com/@CodingWithSohamJain" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <Youtube className="h-6 w-6 transition-colors group-hover:text-primary" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </Button>
           </div>
 
-          {/* Scroll Indicator */}
+        </div>
+        
+        {/* Scroll Indicator - Fixed at bottom */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <button 
             onClick={scrollToNext}
-            className="animate-float"
+            className="group relative animate-float hover:scale-110 transition-all duration-300 p-3 rounded-full border border-primary/20 hover:border-primary/40 backdrop-blur-sm hover:bg-primary/5"
             aria-label="Scroll down"
           >
-            <ArrowDown className="h-8 w-8 text-muted-foreground hover:text-primary transition-smooth" />
+            <ArrowDown className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
         </div>
       </div>
