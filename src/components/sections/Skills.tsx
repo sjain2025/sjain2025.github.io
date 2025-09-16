@@ -1,30 +1,32 @@
-import { Code2, MessageSquare, Users, Lightbulb, Target, Zap } from 'lucide-react';
-import { SiPython, SiJavascript, SiReact, SiTensorflow, SiMongodb, SiNodedotjs } from 'react-icons/si';
+import { Code2, MessageSquare, Users, Lightbulb, Target, Zap, Wrench, Brain, TrendingUp, MessageCircle, Cpu, RefreshCw, FolderKanban } from 'lucide-react';
+import { SiPython, SiJavascript, SiReact, SiTensorflow, SiMongodb, SiNodedotjs, SiTypescript, SiCplusplus, SiHtml5, SiCss3, SiMysql, SiFlask, SiTailwindcss, SiExpress, SiFirebase, SiPytorch, SiScikitlearn } from 'react-icons/si';
 
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Technical Skills",
+      category: "Programming Languages",
       icon: <Code2 className="h-6 w-6" />,
       skills: [
-        { name: "Python", level: 95, icon: <SiPython className="h-4 w-4" /> },
-        { name: "JavaScript/TypeScript", level: 90, icon: <SiJavascript className="h-4 w-4" /> },
-        { name: "Machine Learning", level: 88, icon: <SiTensorflow className="h-4 w-4" /> },
-        { name: "React/Next.js", level: 85, icon: <SiReact className="h-4 w-4" /> },
-        { name: "TensorFlow/PyTorch", level: 82, icon: <SiTensorflow className="h-4 w-4" /> },
-        { name: "SQL/NoSQL", level: 80, icon: <SiMongodb className="h-4 w-4" /> }
+        { name: "Python", level: 100, icon: <SiPython className="h-4 w-4" /> },
+        { name: "Java", level: 100, icon: <Code2 className="h-4 w-4" /> },
+        { name: "TypeScript", level: 100, icon: <SiTypescript className="h-4 w-4" /> },
+        { name: "C/C++", level: 100, icon: <SiCplusplus className="h-4 w-4" /> },
+        { name: "JavaScript", level: 100, icon: <SiJavascript className="h-4 w-4" /> },
+        { name: "HTML/CSS", level: 100, icon: <SiHtml5 className="h-4 w-4" /> },
+        { name: "SQL", level: 100, icon: <SiMysql className="h-4 w-4" /> }
       ]
     },
     {
-      category: "Soft Skills", 
-      icon: <Users className="h-6 w-6" />,
+      category: "Frameworks & Tools", 
+      icon: <Wrench className="h-6 w-6" />,
       skills: [
-        { name: "Leadership", level: 95 },
-        { name: "Communication", level: 92 },
-        { name: "Problem Solving", level: 98 },
-        { name: "Critical Thinking", level: 94 },
-        { name: "Adaptability", level: 90 },
-        { name: "Project Management", level: 85 }
+        { name: "React/Vite", level: 100, icon: <SiReact className="h-4 w-4" /> },
+        { name: "Flask", level: 100, icon: <SiFlask className="h-4 w-4" /> },
+        { name: "Tailwind CSS", level: 100, icon: <SiTailwindcss className="h-4 w-4" /> },
+        { name: "Node.js", level: 100, icon: <SiNodedotjs className="h-4 w-4" /> },
+        { name: "Express.js", level: 100, icon: <SiExpress className="h-4 w-4" /> },
+        { name: "MongoDB/Cloud/Firebase", level: 100, icon: <SiFirebase className="h-4 w-4" /> },
+        { name: "Tensorflow/PyTorch/Keras/Scikit-learn", level: 100, icon: <SiTensorflow className="h-4 w-4" /> }
       ]
     },
     {
@@ -32,8 +34,8 @@ const Skills = () => {
       icon: <MessageSquare className="h-6 w-6" />,
       skills: [
         { name: "English", level: 100 },
-        { name: "Hindi", level: 85 },
-        { name: "Spanish", level: 65 }
+        { name: "Hindi", level: 90 },
+        { name: "Spanish", level: 75 }
       ]
     }
   ];
@@ -92,14 +94,16 @@ const Skills = () => {
           {/* Core Competencies */}
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-bold mb-8">Core Competencies</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
-                { icon: <Lightbulb className="h-8 w-8" />, label: "Innovation" },
                 { icon: <Target className="h-8 w-8" />, label: "Problem Solving" },
-                { icon: <Users className="h-8 w-8" />, label: "Team Leadership" },
-                { icon: <Zap className="h-8 w-8" />, label: "Quick Learning" },
-                { icon: <Code2 className="h-8 w-8" />, label: "Technical Excellence" },
-                { icon: <MessageSquare className="h-8 w-8" />, label: "Communication" }
+                { icon: <Brain className="h-8 w-8" />, label: "Critical Thinking" },
+                { icon: <Users className="h-8 w-8" />, label: "Leadership" },
+                { icon: <Lightbulb className="h-8 w-8" />, label: "Innovation" },
+                { icon: <MessageCircle className="h-8 w-8" />, label: "Communication" },
+                { icon: <Cpu className="h-8 w-8" />, label: "Technical Experience" },
+                { icon: <RefreshCw className="h-8 w-8" />, label: "Adaptability" },
+                { icon: <FolderKanban className="h-8 w-8" />, label: "Project Management" }
               ].map((competency, index) => (
                 <div 
                   key={competency.label}
