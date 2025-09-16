@@ -1,5 +1,6 @@
 # Soham Jain's Personal Website
 
+How to Run:
 ```
 # Step 1: Clone the repository.
 git clone https://github.com/sjain2025/sjain2025.github.io.git
