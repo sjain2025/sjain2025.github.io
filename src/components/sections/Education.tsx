@@ -7,9 +7,9 @@ const Education = () => {
       location: "Pittsburgh, PA",
       degree: "Bachelor of Science in Computer Science",
       period: "December 2027",
+      gpa: "4.0",
       achievements: [
-        "GPA: 4.0",
-        "Software Developer at Scotty Labs on the CMUEats project",
+        "Software Developer at Scotty Labs on the CMUEats team",
         "Association of Computing Machinery Tech Developer",
         "Spikeball and Pickleball Club"
       ]
@@ -20,11 +20,27 @@ const Education = () => {
       degree: "High School Diploma",
       period: "",
       description: "",
+      gpa: "4.535 (weighted) | 4.0 (unweighted)",
+      courses: [
+        "Machine Learning",
+        "Artificial Intelligence", 
+        "Computer Vision",
+        "Mobile & Web App Development",
+        "Multivariable Calculus",
+        "Linear Algebra",
+        "AP Calculus BC",
+        "AP Computer Science A",
+        "AP Physics C M&EM",
+        "AP Statistics",
+        "AP Biology",
+        "AP Psychology",
+        "AP US History",
+        "AP Government",
+        "AP English Lang & Comp"
+      ],
       achievements: [
-        "4.535 Weighted GPA",
-        "4.0/4.0 Unweighted GPA", 
         "Captain of Congressional Debate",
-        "Student Government Association Policy Specialist & Executive Committee",
+        "Student Government Association Policy Specialist & Executive Committee Member",
       ]
     }
   ];
@@ -62,12 +78,33 @@ const Education = () => {
                           <span>{edu.period}</span>
                         </div>
                       )}
+                      {edu.gpa && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-primary">GPA: {edu.gpa}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 <h4 className="text-xl font-semibold text-primary mb-3">{edu.degree}</h4>
                 <p className="text-muted-foreground mb-6">{edu.description}</p>
+
+                {edu.courses && (
+                  <div className="space-y-2 mb-6">
+                    <h5 className="font-semibold text-foreground mb-3">Relevant Courses:</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.courses.map((course, i) => (
+                        <span 
+                          key={i} 
+                          className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-muted text-muted-foreground border"
+                        >
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="space-y-2">
                   <h5 className="font-semibold text-foreground mb-3">Key Achievements:</h5>
