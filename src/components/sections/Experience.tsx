@@ -1,49 +1,52 @@
-import { Building, Calendar, MapPin, TrendingUp } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
+
+interface ExperienceItem {
+  company: string;
+  position: string;
+  period: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  location?: string;
+}
 
 const Experience = () => {
-  const experiences = [
+  const experiences: ExperienceItem[] = [
     {
       company: "Vytal.AI",
       position: "Machine Learning and Software Engineer",
-      location: "Remote",
       period: "May 2022 - June 2025",
-      description: "Leading the development of NeurOS, a groundbreaking smartphone AI application that quantifies brain health using novel gaze-tracking algorithms.",
+      description: "Led the development of NeurOS, a smartphone AI application that quantifies brain health using novel gaze-tracking algorithms.",
       achievements: [
-        "Developed NeurOS AI application with novel gaze-tracking algorithms",
-        "Secured $1.2 million in seed investments",
+        "Implemented machine learning models for brain health assessment",
+        "Designed scalable business model securing $1.2 million in seed investments",
         "Achieved $12.5 million company valuation",
-        "Led cross-functional team in product development",
-        "Implemented machine learning models for brain health assessment"
+        "Led cross-functional team in product development"
       ],
       technologies: ["Python", "TensorFlow", "React Native", "Computer Vision", "Mobile Development"]
     },
     {
       company: "Virginia Tech",
       position: "Computer Science and Quantum Computing Researcher",
-      location: "Blacksburg, VA",
       period: "April 2024 - June 2025",
-      description: "Conducting cutting-edge research on graph coloring applications using Grover's Algorithm under the supervision of Dr. Atul Mantri.",
+      description: "Conducted cutting-edge research on graph coloring applications using Grover's Algorithm alongisde Dr. Atul Mantri.",
       achievements: [
         "Led team of undergraduate students in quantum computing research",
         "Collaborated with Dr. Atul Mantri on graph coloring with Grover's Algorithm",
         "Conducted comprehensive literature reviews on quantum algorithms",
         "Identified gaps in contemporary quantum computing research",
-        "Developed novel approaches to quantum graph coloring problems"
       ],
-      technologies: ["Quantum Computing", "Python", "Qiskit", "Graph Theory", "Research Methodologies"]
+      technologies: ["Quantum Computing", "Python", "Qiskit", "Q#", "Graph Coloring", "Grover's Algorithm"]
     },
     {
       company: "Youth International Digambar Jain Organization",
       position: "President and Co-Founder",
-      location: "Virginia, USA",
       period: "February 2022 - Present",
-      description: "Leading a non-profit organization focused on teaching Jain principles and community service, while managing organizational operations and fundraising.",
+      description: "Lead non-profit organization focused on teaching Jain principles and community service, while managing the website and fundraising.",
       achievements: [
-        "Founded and established the organization from inception",
         "Raised over $25,000 for constructing a Jain temple in Virginia",
         "Developed educational programming on Jain principles",
-        "Managed organizational website and digital presence",
-        "Coordinated community outreach and educational events"
+        "Coordinate community outreach and educational events"
       ],
       technologies: ["Web Development", "Project Management", "Fundraising", "Community Outreach"]
     }
@@ -57,66 +60,61 @@ const Experience = () => {
             Work <span className="text-gradient">Experience</span>
           </h2>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {experiences.map((exp, index) => (
               <div 
                 key={index}
-                className="card-gradient rounded-xl p-8 shadow-medium hover:shadow-hard transition-smooth animate-fade-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard hover:scale-105 transition-all duration-300 animate-fade-up border border-primary/20 hover:border-primary/40"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="grid lg:grid-cols-4 gap-8">
-                  {/* Company Info */}
-                  <div className="lg:col-span-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Building className="h-6 w-6 text-primary" />
-                      <h3 className="text-xl font-bold text-foreground">{exp.company}</h3>
+                {/* Header Section */}
+                <div className="mb-6">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-2">{exp.company}</h3>
+                      <p className="text-lg font-semibold text-primary mb-3">{exp.position}</p>
                     </div>
-                    
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4" />
-                        <span className="font-medium text-primary">{exp.position}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
-                        <span>{exp.location}</span>
-                      </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-muted-foreground">
+                      {exp.location && (
+                        <div className="flex items-center gap-2">
+                          <MapPin className="h-4 w-4" />
+                          <span>{exp.location}</span>
+                        </div>
+                      )}
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4" />
-                        <span>{exp.period}</span>
+                        <span className="font-medium">{exp.period}</span>
                       </div>
                     </div>
                   </div>
+                  <p className="text-base text-muted-foreground leading-relaxed">{exp.description}</p>
+                </div>
 
-                  {/* Experience Details */}
-                  <div className="lg:col-span-3">
-                    <p className="text-muted-foreground mb-6">{exp.description}</p>
+                {/* Achievements Section */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-foreground mb-4">Key Achievements</h4>
+                  <ul className="space-y-3">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i} className="flex items-start">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-4 mt-2.5 flex-shrink-0"></div>
+                        <span className="text-muted-foreground leading-relaxed">{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
-                      <ul className="space-y-2">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start text-muted-foreground">
-                            <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Technologies Used:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, i) => (
-                          <span 
-                            key={i}
-                            className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm border border-primary/30"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                {/* Technologies Section */}
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-4">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {exp.technologies.map((tech, i) => (
+                      <span 
+                        key={i}
+                        className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

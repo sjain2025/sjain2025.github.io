@@ -85,7 +85,7 @@ const Resume = () => {
 
               {/* Contact Info */}
               <div className="bg-card rounded-2xl p-6 shadow-medium border border-border">
-                <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
+                <h3 className="text-xl font-semibold mb-4">Contact Me</h3>
                 <p className="text-muted-foreground mb-4">
                   Interested in my background? Let's connect!
                 </p>

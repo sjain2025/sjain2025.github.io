@@ -75,12 +75,11 @@ const Chatbot = () => {
       {
         company: "Vytal.AI",
         position: "Machine Learning and Software Engineer",
-        location: "Remote",
         period: "May 2022 - June 2025",
-        description: "Leading the development of NeurOS, a groundbreaking smartphone AI application that quantifies brain health using novel gaze-tracking algorithms.",
+        description: "Led the development of NeurOS, a groundbreaking smartphone AI application that quantified brain health using novel gaze-tracking algorithms.",
         achievements: [
           "Developed NeurOS AI application with novel gaze-tracking algorithms",
-          "Secured $1.2 million in seed investments",
+          "Designed scalable business model securing $1.2 million in seed investments",
           "Achieved $12.5 million company valuation",
           "Led cross-functional team in product development",
           "Implemented machine learning models for brain health assessment"
@@ -313,7 +312,7 @@ const Chatbot = () => {
 
     // Experience
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
-      return `Soham has extensive work experience:\n\n1. **Vytal.AI** (May 2022 - June 2025): Machine Learning and Software Engineer, leading development of NeurOS AI application for brain health assessment. Secured $1.2M in seed investments and achieved $12.5M company valuation.\n\n2. **Virginia Tech** (April 2024 - June 2025): Computer Science and Quantum Computing Researcher, working with Dr. Atul Mantri on graph coloring with Grover's Algorithm.\n\n3. **Youth International Digambar Jain Organization** (Feb 2022 - Present): President and Co-Founder, raised over $25,000 for temple construction.`;
+      return `Soham has extensive work experience:\n\n1. **Vytal.AI** (May 2022 - June 2025): Machine Learning and Software Engineer, led development of NeurOS AI application for brain health assessment. Designed scalable business model securing $1.2M in seed investments and achieved $12.5M company valuation.\n\n2. **Virginia Tech** (April 2024 - June 2025): Computer Science and Quantum Computing Researcher, working with Dr. Atul Mantri on graph coloring with Grover's Algorithm.\n\n3. **Youth International Digambar Jain Organization** (Feb 2022 - Present): President and Co-Founder, raised over $25,000 for temple construction.`;
     }
 
     // Projects
@@ -343,7 +342,7 @@ const Chatbot = () => {
 
     // Vytal.AI specific
     if (message.includes('vytal') || message.includes('neuros')) {
-      return `Vytal.AI is a startup where Soham worked as a Machine Learning and Software Engineer from May 2022 to June 2025. He led the development of NeurOS, a smartphone AI application that quantifies brain health using novel gaze-tracking algorithms. The company successfully secured $1.2 million in seed investments and achieved a $12.5 million valuation. Soham's work involved implementing machine learning models for brain health assessment and leading cross-functional teams in product development.`;
+      return `Vytal.AI was a startup where Soham worked as a Machine Learning and Software Engineer from May 2022 to June 2025. He led the development of NeurOS, a smartphone AI application that quantifies brain health using novel gaze-tracking algorithms. He designed a scalable business model that secured $1.2 million in seed investments and achieved a $12.5 million valuation. Soham's work involved implementing machine learning models for brain health assessment and leading cross-functional teams in product development.`;
     }
 
     // Quantum computing

@@ -18,14 +18,15 @@ const Hero = () => {
           backgroundImage: `url(${heroImage})`
         }}
       >
-        <div className="absolute inset-0 bg-background/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/80"></div>
       </div>
+
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center flex flex-col justify-center h-full">
         <div className="max-w-6xl mx-auto">
           {/* Main Content - Profile Image and Text Side by Side */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-8">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-8">
             {/* Profile Image */}
             <div className="flex-shrink-0 animate-fade-up [animation-delay:0.05s]">
               <img 
@@ -40,16 +41,14 @@ const Hero = () => {
             {/* Text Content */}
             <div className="flex-1 text-center lg:text-left max-w-2xl mt-14">
               <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-up [animation-delay:0.05s]">
-                <span className="inline-block overflow-hidden border-r-4 border-primary whitespace-nowrap animate-typing-blink">
+                <span className="inline-block overflow-hidden border-r-4 border-primary whitespace-nowrap animate-typing-blink bg-gradient-to-r from-white via-primary to-accent bg-clip-text text-transparent">
                   Soham Jain
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground mb-10 animate-fade-up [animation-delay:0.05s]">
-                Computer Science @ Carnegie Mellon University
-              </p>
+              <p className="text-xl md:text-2xl text-white font-bold mb-10 animate-fade-up [animation-delay:0.05s] whitespace-nowrap">Software Developer | AI Researcher | Entrepreneur</p>
               
-              <p className="text-xl md:text-2xl text-muted-foreground mb-12 animate-fade-up [animation-delay:0.05s]">
+              <p className="text-xl md:text-2xl text-white/90 mb-12 animate-fade-up [animation-delay:0.05s] leading-relaxed">
               Ambitious computer scientist with a passion for software development and artificial intelligence. Leveraging
               interpersonal skills and technical proficiency to innovate modern solutions to real-world problems.
               </p>
@@ -78,7 +77,7 @@ const Hero = () => {
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <span className="relative z-10 flex items-center gap-2">
-                Get In Touch
+                Contact Me
                 <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>

@@ -1,4 +1,4 @@
-import { Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { Heart, Github, Linkedin, Mail, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -6,6 +6,9 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Resume', href: '#resume' },
+    { name: 'Education', href: '#education' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Research', href: '#research' },
@@ -35,31 +38,45 @@ const Footer = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
+                className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-12 h-12 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
                 asChild
               >
                 <a href="mailto:sohamj@andrew.cmu.edu" aria-label="Email">
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-5 w-5 transition-colors group-hover:text-primary" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
+                className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-12 h-12 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
                 asChild
               >
                 <a href="https://www.linkedin.com/in/soham-jain1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
+                  <Linkedin className="h-5 w-5 transition-colors group-hover:text-primary" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               </Button>
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="rounded-full hover:scale-110 transition-bounce hover:bg-primary/20"
+                className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-12 h-12 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
                 asChild
               >
                 <a href="https://github.com/sjain2025" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <Github className="h-5 w-5" />
+                  <Github className="h-5 w-5 transition-colors group-hover:text-primary" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/10 w-12 h-12 backdrop-blur-sm border border-primary/20 hover:border-primary/40"
+                asChild
+              >
+                <a href="https://www.youtube.com/@CodingWithSohamJain" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <Youtube className="h-5 w-5 transition-colors group-hover:text-primary" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               </Button>
             </div>
@@ -68,7 +85,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button

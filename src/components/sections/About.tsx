@@ -42,12 +42,12 @@ const About = () => {
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             About <span className="text-gradient">Me</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
             {highlights.map((item, index) => (
               <div 
                 key={index}

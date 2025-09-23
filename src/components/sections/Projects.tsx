@@ -195,7 +195,7 @@ const Projects = () => {
           {/* More Projects CTA */}
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-6">
-              Want to see more of my work? Check out my GitHub for additional projects and contributions.
+              Want to see more of my work? Check out my GitHub!
             </p>
             <Button 
               size="lg"
