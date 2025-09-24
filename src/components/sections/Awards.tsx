@@ -1,4 +1,4 @@
-import { Trophy, Award, Users, Code, Star, Medal } from 'lucide-react';
+import { Trophy, Award, Users, Code, Star, Calculator } from 'lucide-react';
 
 const Awards = () => {
   const awards = [
@@ -7,13 +7,7 @@ const Awards = () => {
       organization: "U.S. House of Representatives (VA-10)",
       year: "2024",
       icon: <Trophy className="h-8 w-8" />,
-      description: "Selected first place by U.S. Representative Jennifer Wexton for exceptional mobile app development project demonstrating innovation and technical excellence.",
-      achievements: [
-        "Featured on House.gov and national news outlets",
-        "Invited to demo application at Capitol Hill",
-        "Recognition from U.S. Representative Jennifer Wexton",
-        "National-level competition winner"
-      ],
+      description: "Selected first place by U.S. Representative Jennifer Wexton for exceptional mobile app development project. Presented findings and demo'd app at Capitol Hill.",
       category: "Government Recognition"
     },
     {
@@ -22,55 +16,39 @@ const Awards = () => {
       year: "2024",
       icon: <Award className="h-8 w-8" />,
       description: "Recognized for exceptional technical contribution with EyeLS gaze-tracking web application for ALS patients, demonstrating innovation in assistive technology.",
-      achievements: [
-        "Technical excellence in gaze-tracking algorithms",
-        "Innovation in assistive technology for ALS patients",
-        "Implementation of advanced Kalman Filtering",
-        "Monte Carlo algorithm optimization"
-      ],
       category: "Technical Achievement"
     },
     {
-      title: "Best Presentation Award",
-      organization: "6th IEEE International Conference on Robotics and Computer Vision",
-      year: "2024",
-      icon: <Star className="h-8 w-8" />,
-      description: "Received recognition for exceptional oral presentation of first-author research paper on LapseNet fall detection system at prestigious IEEE conference.",
-      achievements: [
-        "Exceptional oral presentation skills demonstrated",
-        "First-author IEEE publication recognition",
-        "International conference presentation",
-        "Peer-reviewed research contribution"
-      ],
-      category: "Academic Excellence"
-    },
-    {
-      title: "Meta Hacker Cup Round 2 Qualifier",
+      title: "2x Meta Hacker Cup Round 2 Qualifier",
       organization: "Meta (Facebook)",
       year: "2024",
       icon: <Code className="h-8 w-8" />,
       description: "Achieved top 10% internationally and top 100 in the United States while competing against over 20,000 software developers worldwide.",
-      achievements: [
-        "Top 10% internationally (20,000+ participants)",
-        "Top 100 ranking in the United States",
-        "Advanced algorithmic problem-solving skills",
-        "Competitive programming excellence"
-      ],
       category: "Competitive Programming"
     },
     {
-      title: "5x Devpost Hackathon Winner",
-      organization: "Various Hackathon Organizations",
+      title: "Best Presentation Award",
+      organization: "6th International Conference on Robotics and Computer Vision",
+      year: "2024",
+      icon: <Star className="h-8 w-8" />,
+      description: "Received recognition for exceptional oral presentation of first-author research paper on LapseNet fall detection system at prestigious IEEE conference.",
+      category: "Academic Excellence"
+    },
+    {
+      title: "5x International Hackathons Winner",
+      organization: "Devpost",
       year: "2022-2024",
       icon: <Users className="h-8 w-8" />,
-      description: "Consistently demonstrated innovation and technical prowess by winning five different hackathon competitions on the Devpost platform.",
-      achievements: [
-        "Five separate hackathon victories",
-        "Consistent innovation and creativity",
-        "Rapid prototyping and development skills",
-        "Cross-functional team collaboration"
-      ],
+      description: "Applied technical skills to solve real-world problems via software development projects at hackathons on Devpost.",
       category: "Innovation & Development"
+    },
+    {
+      title: "3x AIME Qualifier",
+      organization: "Mathematical Association of America",
+      year: "2021-2023",
+      icon: <Calculator className="h-8 w-8" />,
+      description: "Qualified for the American Invitational Mathematics Examination three times (top 2.5% in the nation).",
+      category: "Mathematical Excellence"
     }
   ];
 
@@ -84,50 +62,38 @@ const Awards = () => {
           </h2>
 
 
-          {/* Awards List */}
-          <div className="space-y-8">
+          {/* Awards Grid */}
+          <div className="grid md:grid-cols-2 gap-8">
             {awards.map((award, index) => (
               <div 
                 key={index}
-                className="card-gradient rounded-xl p-8 shadow-medium hover:shadow-hard transition-smooth group animate-fade-up"
-                style={{ animationDelay: `${index * 0.2 + 0.4}s` }}
+                className="relative card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard transition-all duration-300 group animate-fade-up hover:-translate-y-2 hover:scale-105 border border-border/50 hover:border-primary/30"
+                style={{ animationDelay: `${index * 0.1 + 0.4}s` }}
               >
-                <div className="flex flex-col lg:flex-row gap-8">
-                  {/* Award Icon & Category */}
-                  <div className="flex-shrink-0 lg:w-48">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="text-primary group-hover:scale-110 transition-bounce">
-                        {award.icon}
-                      </div>
-                      <div>
-                        <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">
-                          {award.category}
-                        </span>
-                        <p className="text-sm text-muted-foreground mt-1">{award.year}</p>
-                      </div>
-                    </div>
+                {/* Award Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-primary group-hover:scale-110 transition-all duration-300 bg-primary/10 p-3 rounded-xl group-hover:bg-primary/20">
+                    {award.icon}
                   </div>
-
-                  {/* Award Details */}
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{award.title}</h3>
-                    <p className="text-primary font-semibold mb-4">{award.organization}</p>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">{award.description}</p>
-
-                    {/* Key Achievements */}
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Key Highlights:</h4>
-                      <ul className="grid md:grid-cols-2 gap-2">
-                        {award.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start text-muted-foreground">
-                            <Medal className="h-4 w-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {award.title}
+                    </h3>
                   </div>
                 </div>
+
+                {/* Award Content */}
+                <div className="space-y-4">
+                  <p className="text-primary font-semibold">
+                    {award.organization}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {award.description}
+                  </p>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>

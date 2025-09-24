@@ -22,12 +22,26 @@ const Chatbot = () => {
       timestamp: new Date()
     }
   ]);
+  const [showSuggestions, setShowSuggestions] = useState(true);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const suggestions = [
+    "Tell me about Soham",
+    "What are Soham's work experiences?",
+    "What research has Soham published?",
+    "What awards has Soham received?",
+    "How can I contact Soham?"
+  ];
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setShowSuggestions(false);
+    handleSendMessage(suggestion);
   };
 
   useEffect(() => {
@@ -238,7 +252,7 @@ const Chatbot = () => {
         ]
       },
       {
-        title: "Meta Hacker Cup Round 2 Qualifier",
+        title: "2x Meta Hacker Cup Round 2 Qualifier",
         organization: "Meta (Facebook)",
         year: "2024",
         description: "Achieved top 10% internationally and top 100 in the United States while competing against over 20,000 software developers worldwide.",
@@ -250,15 +264,27 @@ const Chatbot = () => {
         ]
       },
       {
-        title: "5x Devpost Hackathon Winner",
-        organization: "Various Hackathon Organizations",
+        title: "5x International Hackathons Winner",
+        organization: "Devpost",
         year: "2022-2024",
-        description: "Consistently demonstrated innovation and technical prowess by winning five different hackathon competitions on the Devpost platform.",
+        description: "Applied technical skills to solve real-world problems via software development projects at hackathons on Devpost.",
         achievements: [
           "Five separate hackathon victories",
           "Consistent innovation and creativity",
           "Rapid prototyping and development skills",
           "Cross-functional team collaboration"
+        ]
+      },
+      {
+        title: "3x AIME Qualifier",
+        organization: "Mathematical Association of America",
+        year: "2021-2023",
+        description: "Qualified for the American Invitational Mathematics Examination three times (top 2.5% in the nation).",
+        achievements: [
+          "Top 2.5% in the nation",
+          "Exceptional mathematical problem-solving abilities",
+          "Advanced mathematical reasoning",
+          "Multiple qualification years"
         ]
       }
     ],
@@ -302,7 +328,7 @@ const Chatbot = () => {
     }
     
     if (message.includes('about') || message.includes('tell me about')) {
-      return `Soham Jain is an ambitious computer scientist currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University (expected graduation 2028). He has a strong background in AI/ML, mobile development, and research, with multiple published papers and significant industry experience at Vytal.AI.`;
+      return `Soham Jain is an ambitious computer scientist currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University. He has a strong background in AI/ML, software development, and research, with multiple published papers and industry experience.`;
     }
 
     // Education
@@ -312,32 +338,32 @@ const Chatbot = () => {
 
     // Experience
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
-      return `Soham has extensive work experience:\n\n1. **Vytal.AI** (May 2022 - June 2025): Machine Learning and Software Engineer, led development of NeurOS AI application for brain health assessment. Designed scalable business model securing $1.2M in seed investments and achieved $12.5M company valuation.\n\n2. **Virginia Tech** (April 2024 - June 2025): Computer Science and Quantum Computing Researcher, working with Dr. Atul Mantri on graph coloring with Grover's Algorithm.\n\n3. **Youth International Digambar Jain Organization** (Feb 2022 - Present): President and Co-Founder, raised over $25,000 for temple construction.`;
+      return `Soham has extensive professional experience:\n\n1. <strong>Vytal.AI</strong> (May 2022 - June 2025): Machine Learning and Software Engineer, led development of NeurOS AI application for brain health assessment. Designed scalable business model securing $1.2M in seed investments and achieved $12.5M company valuation.\n\n2. <strong>Virginia Tech</strong> (April 2024 - June 2025): Computer Science and Quantum Computing Researcher, working with Dr. Atul Mantri on graph coloring applications using Grover's Algorithm.\n\n3. <strong>Youth International Digambar Jain Organization</strong> (Feb 2022 - Present): President and Co-Founder, raised over $25,000 for constructing a Jain temple in Virginia and coordinated community outreach events.`;
     }
 
     // Projects
     if (message.includes('project') || message.includes('app') || message.includes('application')) {
-      return `Soham has worked on several notable projects:\n\n1. **RoutineRemind**: A provisional patented scheduling app for individuals with speech and cognitive disabilities, deployed on Google Play and Apple App Store.\n\n2. **EyeLS**: A gaze-tracking web application for ALS patients to communicate nonverbally, winner of IEEE Technical Excellence Award.\n\n3. **NeurOS**: A smartphone AI application that quantifies brain health using novel gaze-tracking algorithms, part of Vytal.AI's $1.2M funding round.`;
+      return `Soham has worked on several notable projects:\n\n1. <strong>RoutineRemind</strong>: Provisional patented scheduling app for individuals with speech and cognitive disabilities, deployed on Google Play and Apple App Store.\n\n2. <strong>EyeLS</strong>: Revolutionary gaze-tracking web application for ALS patients to communicate nonverbally, winner of IEEE Technical Excellence Award.\n\n3. <strong>NeurOS (Vytal.AI)</strong>: Smartphone AI application that quantifies brain health using novel gaze-tracking algorithms, part of successful $1.2M funding round with $12.5M company valuation.`;
     }
 
     // Research
     if (message.includes('research') || message.includes('paper') || message.includes('publication')) {
-      return `Soham has published 4 research papers, with 3 as first author:\n\n1. **LapseNet**: CNN-LSTM approach for fall detection (IEEE conference, Best Presentation Award)\n2. **RexDash**: Dashboard for molecular dynamics simulations (Journal publication)\n3. **ALS Diagnosis**: Transformer-based EEG analysis for 2-minute ALS diagnosis\n4. **ConVox**: Multilingual voice disorder detection system\n\nHis research focuses on AI/ML applications in healthcare, quantum computing, and assistive technology.`;
+      return `Soham has published 4 first-author research publications:\n\n1. <strong>LapseNet</strong> (IEEE ICRCV 2024): Hybrid CNN-LSTM approach for fall detection - Best Presentation Award\n2. <strong>ALS Diagnosis</strong> (IEEE ICACTE 2024): Transformer-based EEG analysis for 2-minute ALS diagnosis\n3. <strong>ConVox</strong> (IEEE ICBAIE 2024): Multilingual voice disorder detection system\n4. <strong>RexDash</strong> (Journal publication): Dashboard for molecular dynamics simulations\n\nHis research focuses on AI/ML applications in healthcare, assistive technology, and quantum computing.`;
     }
 
     // Awards
     if (message.includes('award') || message.includes('recognition') || message.includes('achievement')) {
-      return `Soham has received numerous awards and recognition:\n\n• **Congressional App Challenge Winner** (2024) - Selected by U.S. Representative Jennifer Wexton\n• **IEEE Technical Excellence Award** (2024) - For EyeLS gaze-tracking application\n• **Best Presentation Award** (2024) - IEEE conference for LapseNet research\n• **Meta Hacker Cup Round 2 Qualifier** (2024) - Top 10% internationally, top 100 in US\n• **5x Devpost Hackathon Winner** (2022-2024) - Consistent innovation across multiple competitions`;
+      return `Soham has received numerous awards and recognition:\n\n• <strong>Congressional App Challenge Winner</strong> (2024) - Selected by U.S. Representative Jennifer Wexton, presented at Capitol Hill\n• <strong>IEEE Technical Excellence Award</strong> (2024) - For EyeLS gaze-tracking application for ALS patients\n• <strong>2x Meta Hacker Cup Round 2 Qualifier</strong> (2024) - Top 10% internationally, top 100 in US among 20,000+ participants\n• <strong>Best Presentation Award</strong> (2024) - IEEE conference for LapseNet research presentation\n• <strong>5x International Hackathons Winner</strong> (2022-2024) - Consistent innovation across multiple competitions on Devpost\n• <strong>3x AIME Qualifier</strong> (2021-2023) - Top 2.5% in the nation for American Invitational Mathematics Examination`;
     }
 
     // Skills
     if (message.includes('skill') || message.includes('technology') || message.includes('programming')) {
-      return `Soham's technical skills include:\n\n**Programming Languages**: Python (95%), JavaScript/TypeScript (90%), C++, Java, SQL, MATLAB, Q#\n**AI/ML**: TensorFlow, PyTorch, Keras, Pandas, Scikit-learn (88% proficiency)\n**Web/Mobile**: React, Next.js, React Native, HTML/CSS, Android Studio (85% proficiency)\n**Backend**: Node.js, MongoDB, Google Cloud, Firebase\n**Soft Skills**: Leadership (95%), Problem Solving (98%), Communication (92%), Critical Thinking (94%)`;
+      return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python (95%), JavaScript/TypeScript (90%), C++, Java, SQL, MATLAB, Q#\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, Pandas, Scikit-learn (88% proficiency)\n<strong>Web/Mobile</strong>: React, Next.js, React Native, HTML/CSS, Android Studio (85% proficiency)\n<strong>Backend</strong>: Node.js, MongoDB, Google Cloud, Firebase\n<strong>Soft Skills</strong>: Leadership (95%), Problem Solving (98%), Communication (92%), Critical Thinking (94%)`;
     }
 
     // Contact
     if (message.includes('contact') || message.includes('email') || message.includes('reach')) {
-      return `You can contact Soham through:\n\n• **Email**: sohamj@andrew.cmu.edu\n• **LinkedIn**: https://www.linkedin.com/in/soham-jain1/\n• **GitHub**: https://github.com/sjain2025\n• **YouTube**: https://www.youtube.com/@CodingWithSohamJain\n• **Website**: http://sohamjain.com/\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
+      return `You can contact Soham through:\n\n• <strong>Email</strong>: sohamj@andrew.cmu.edu\n• <strong>LinkedIn</strong>: linkedin.com/in/soham-jain1\n• <strong>GitHub</strong>: github.com/sjain2025\n• <strong>YouTube</strong>: @CodingWithSohamJain\n• <strong>Website</strong>: sohamjain.com\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
     }
 
     // Vytal.AI specific
@@ -354,12 +380,13 @@ const Chatbot = () => {
     return `I'd be happy to help you learn more about Soham Jain! You can ask me about his education, work experience, projects, research publications, awards, skills, or how to contact him. What specific aspect would you like to know more about?`;
   };
 
-  const handleSendMessage = async () => {
-    if (!inputValue.trim()) return;
+  const handleSendMessage = async (messageText?: string) => {
+    const messageToSend = messageText || inputValue;
+    if (!messageToSend.trim()) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      text: inputValue,
+      text: messageToSend,
       isUser: true,
       timestamp: new Date()
     };
@@ -372,7 +399,7 @@ const Chatbot = () => {
     setTimeout(() => {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: generateResponse(inputValue),
+        text: generateResponse(messageToSend),
         isUser: false,
         timestamp: new Date()
       };
@@ -466,13 +493,33 @@ const Chatbot = () => {
                       {message.isUser && (
                         <User className="h-4 w-4 mt-0.5 text-white flex-shrink-0" />
                       )}
-                      <div className="whitespace-pre-wrap text-sm">
-                        {message.text}
-                      </div>
+                      <div 
+                        className="whitespace-pre-wrap text-sm"
+                        dangerouslySetInnerHTML={{ __html: message.text }}
+                      />
                     </div>
                   </div>
                 </div>
               ))}
+              
+              {/* Suggestion Buttons */}
+              {showSuggestions && (
+                <div className="space-y-2">
+                  <p className="text-xs text-muted-foreground mb-2">Try asking:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {suggestions.map((suggestion, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSuggestionClick(suggestion)}
+                        className="text-xs bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 rounded-full transition-colors duration-200 hover:scale-105"
+                      >
+                        {suggestion}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="bg-muted rounded-lg p-3">
@@ -501,7 +548,7 @@ const Chatbot = () => {
                   className="flex-1"
                 />
                 <Button
-                  onClick={handleSendMessage}
+                  onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim()}
                   className="primary-gradient hover:scale-105 transition-bounce"
                   size="icon"
