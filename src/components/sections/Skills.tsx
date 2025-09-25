@@ -93,7 +93,6 @@ const Skills = () => {
 
           {/* Core Competencies */}
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-8">Core Competencies</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {[
                 { icon: <Target className="h-8 w-8" />, label: "Problem Solving" },
