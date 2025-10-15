@@ -15,6 +15,20 @@ npm i
 npm run dev
 ```
 
+How to Update:
+```
+# Step 1: Update dist folder.
+npm run build
+
+# Step 2: Push to main branch
+git add .
+git commit -m "Commit Message"
+git push -u origin main
+
+# Step 3: Push to gh-pages
+npm run deploy
+```
+
 ## What technologies are used for this project?
 
 This project is built with:
