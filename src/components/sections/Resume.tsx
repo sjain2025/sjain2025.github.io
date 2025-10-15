@@ -51,7 +51,7 @@ const Resume = () => {
                     </Button>
                   </div>
                 </div>
-                <div className="relative" style={{ height: '800px' }}>
+                <div className="relative" style={{ height: '1030px' }}>
                   <iframe
                     src={resumePdf}
                     className="w-full h-full border-0"
