@@ -40,7 +40,6 @@ const Chatbot = () => {
   };
 
   const handleSuggestionClick = (suggestion: string) => {
-    setShowSuggestions(false);
     handleSendMessage(suggestion);
   };
 
@@ -73,102 +72,119 @@ const Chatbot = () => {
         degree: "Bachelor of Science in Computer Science",
         location: "Pittsburgh, PA",
         period: "2024 - December 2027",
-        expectedGraduation: "2028",
+        expectedGraduation: "December 2027",
         school: "School of Computer Science",
-        focus: "AI and Machine Learning"
+        activities: ["Software Developer at ScottyLabs on the CMUEats team", "Association of Computing Machinery Tech Developer", "Spikeball and Pickleball Club"],
+        coursework: ["Data Structures and Algorithms", "Artificial Intelligence", "Applied Machine Learning", "Discrete Mathematics", "Computational Linear Algebra", "Multivariable Calculus", "Computer Vision", "Mobile and Web Application Development"]
       },
       highSchool: {
         institution: "Thomas Jefferson High School for Science and Technology",
         location: "Alexandria, VA",
         degree: "High School Diploma",
         gpa: "4.535 Weighted GPA, 4.0/4.0 Unweighted GPA",
-        achievements: ["Captain of Congressional Debate", "Student Government Association Executive Committee", "Policy Specialist"]
+        achievements: ["Captain of Congressional Debate", "Student Government Association Policy Specialist & Executive Committee Member"]
       }
     },
     experience: [
       {
         company: "Vytal.AI",
-        position: "Machine Learning and Software Engineer",
-        period: "May 2022 - June 2025",
-        description: "Led the development of NeurOS, a groundbreaking smartphone AI application that quantified brain health using novel gaze-tracking algorithms.",
+        position: "Software and Machine Learning Engineer",
+        period: "May 2022 - December 2024",
+        location: "Alexandria, Virginia",
+        description: "Developed an AI-powered mobile application for rapid brain health assessment through state-of-the-art eye-tracking technology at a venture capital-backed startup.",
         achievements: [
-          "Developed NeurOS AI application with novel gaze-tracking algorithms",
-          "Designed scalable business model securing $1.2 million in seed investments",
-          "Achieved $12.5 million company valuation",
-          "Led cross-functional team in product development",
-          "Implemented machine learning models for brain health assessment"
+          "Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations",
+          "Optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers",
+          "Engineered head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations"
         ],
-        technologies: ["Python", "TensorFlow", "React Native", "Computer Vision", "Mobile Development"]
+        technologies: ["Python", "OpenCV", "React Native", "AWS EC2", "YOLOv8", "Machine Learning"]
       },
       {
         company: "Virginia Tech",
         position: "Computer Science and Quantum Computing Researcher",
-        location: "Blacksburg, VA",
-        period: "April 2024 - June 2025",
-        description: "Conducting cutting-edge research on graph coloring applications using Grover's Algorithm under the supervision of Dr. Atul Mantri.",
+        location: "Blacksburg, Virginia",
+        period: "April 2024 - May 2025",
+        description: "Conducted advanced research on quantum algorithms and their applications to computational problems under the guidance of Dr. Atul Mantri.",
         achievements: [
-          "Led team of undergraduate students in quantum computing research",
-          "Collaborated with Dr. Atul Mantri on graph coloring with Grover's Algorithm",
-          "Conducted comprehensive literature reviews on quantum algorithms",
-          "Identified gaps in contemporary quantum computing research",
-          "Developed novel approaches to quantum graph coloring problems"
+          "Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks",
+          "Designed quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python",
+          "Achieved 65% reduction in computational cost compared to traditional classical recursive approaches"
         ],
-        technologies: ["Quantum Computing", "Python", "Qiskit", "Graph Theory", "Research Methodologies"]
+        technologies: ["Python", "MATLAB", "Qiskit", "Q#", "Quantum Computing", "Algorithm Design"]
       },
       {
         company: "Youth International Digambar Jain Organization",
         position: "President and Co-Founder",
-        location: "Virginia, USA",
         period: "February 2022 - Present",
-        description: "Leading a non-profit organization focused on teaching Jain principles and community service, while managing organizational operations and fundraising.",
+        description: "Lead non-profit organization dedicated to education and community building centered on Jain philosophy and cultural values.",
         achievements: [
-          "Founded and established the organization from inception",
-          "Raised over $25,000 for constructing a Jain temple in Virginia",
-          "Developed educational programming on Jain principles",
-          "Managed organizational website and digital presence",
-          "Coordinated community outreach and educational events"
+          "Direct educational programming that teaches Jain principles including ahimsa (non-violence) and peace to over 150 students",
+          "Oversee fundraising initiatives that have secured more than $25,000 for the construction of a temple serving as a center for worship and cultural events in Northern Virginia"
         ],
-        technologies: ["Web Development", "Project Management", "Fundraising", "Community Outreach"]
+        technologies: ["Leadership", "Program Development", "Fundraising", "Community Engagement"]
       }
     ],
     projects: [
       {
         title: "RoutineRemind",
         description: "Provisional patented, utility patent-pending scheduling application specifically designed for individuals with speech and cognitive disabilities. Currently being deployed on both Google Play Store and Apple App Store.",
-        status: "Live on App Stores",
+        status: "Patent-Pending Mobile App",
         period: "June 2022 - Present",
-        technologies: ["React Native", "Node.js", "MongoDB", "Push Notifications", "Accessibility APIs"],
+        technologies: ["React", "JavaScript", "TypeScript", "Python", "HTML/CSS", "Firebase", "Rasa"],
         achievements: [
-          "Provisional patent granted with utility patent pending",
-          "Deployed on both Google Play and Apple App Store",
-          "Specialized accessibility features for cognitive disabilities",
+          "Presented app at Capitol Hill",
+          "Featured on House.gov, FFXnow, LoudounNow, Fairfax Times, & more",
+          "Developed accessibility features for children with autism",
+          "User-friendly interface designed for individuals with special needs",
           "Real-time scheduling and reminder system",
-          "User-friendly interface designed for special needs"
+          "Fully functional login authentication system"
         ]
       },
       {
         title: "EyeLS",
-        description: "Revolutionary gaze-tracking web application designed to help ALS patients communicate nonverbally. Implements advanced Kalman Filtering and Monte Carlo algorithms for precise eye movement detection.",
+        description: "Gaze-tracking web application designed to enable ALS patients to communicate nonverbally. Implements Kalman Filtering and Monte Carlo algorithms for precise eye movement detection.",
         status: "IEEE Award Winner",
         period: "August 2023 - Present",
-        technologies: ["JavaScript", "WebRTC", "Computer Vision", "Kalman Filters", "Monte Carlo Methods"],
+        technologies: ["JavaScript", "HTML/CSS", "Computer Vision", "Kalman Filtering", "Monte Carlo"],
         achievements: [
           "Recognized with IEEE Technical Excellence Award",
-          "Implements cutting-edge gaze-tracking algorithms",
-          "Helps ALS patients communicate through eye movements",
-          "Real-time eye tracking with high accuracy",
-          "Web-based solution for accessibility"
+          "Implements novel gaze-tracking algorithms",
+          "Cost-effective, accessible alternative to modern eye-tracking devices",
+          "Real-time eye tracking with high accuracy"
         ]
       },
       {
-        title: "NeurOS (Vytal.AI)",
-        description: "Smartphone AI application that quantifies brain health using novel gaze-tracking algorithms. Part of the successful $1.2M funding round at Vytal.AI with $12.5M company valuation.",
+        title: "CMUEats",
+        description: "Comprehensive dining locations website for Carnegie Mellon University, providing real-time information about campus dining options, hours, and menus. Developed as part of ScottyLabs student organization.",
+        period: "August 2025 - Present",
+        technologies: ["Vite", "React", "TypeScript", "HTML", "Vanilla CSS", "Elysia"],
+        achievements: [
+          "Most used student-made website on campus",
+          "Implemented sort by location feature",
+          "Real-time dining information and hours",
+          "Interactive campus dining map",
+          "Mobile and web responsive design"
+        ]
+      },
+      {
+        title: "Memory Lane",
+        description: "Mobile application designed to provide people with Alzheimer's and other memory loss-related conditions with a platform to replay memories from their past.",
+        period: "March 2023 - June 2024",
+        technologies: ["React Native", "JavaScript", "Firebase", "TypeScript", "HTML/CSS"],
+        achievements: [
+          "Designed for Alzheimer's and memory loss patients",
+          "Interactive Q&A feature built with NLPs",
+          "Email-based authentication system",
+          "User-friendly interface for elderly users"
+        ]
+      },
+      {
+        title: "NeurOS",
+        description: "Smartphone AI application that quantifies brain health using gaze-tracking algorithms. Developed during time at Vytal.AI.",
         status: "Funded Startup",
         period: "May 2022 - Present",
-        technologies: ["AI/ML", "Mobile Development", "Computer Vision", "React Native", "Python"],
+        technologies: ["React Native", "Python", "AI/ML", "Mobile Development", "Computer Vision"],
         achievements: [
-          "Secured $1.2 million in seed investments",
-          "Achieved $12.5 million company valuation",
           "Novel gaze-tracking algorithms for brain health",
           "AI-powered health assessment platform",
           "Commercial deployment and user acquisition"
@@ -178,40 +194,44 @@ const Chatbot = () => {
     research: [
       {
         title: "LapseNet: A Hybrid CNN-LSTM Approach for Accurate and Efficient Vision-Based Fall Detection",
-        authors: "Soham Jain et al.",
-        venue: "6th International Conference on Robotics and Computer Vision (IEEE)",
+        authors: "Soham Jain, Shaurya Jain, Anmol Karan",
+        venue: "6th International Conference on Robotics and Computer Vision (ICRCV)",
         year: "2024",
         type: "First Author",
         award: "Best Presentation Award",
-        description: "Developed a novel hybrid deep learning approach combining CNNs and LSTMs for real-time fall detection systems, achieving state-of-the-art accuracy while maintaining computational efficiency.",
-        keywords: ["Computer Vision", "Deep Learning", "CNN-LSTM", "Fall Detection", "Healthcare AI"]
-      },
-      {
-        title: "RexDash: A Comprehensive Dashboard for Analyzing the Technical Performance of Replica Exchange Molecular Dynamics Simulations",
-        authors: "Soham Jain, Dr. Christopher Lockhart",
-        venue: "Journal of Student-Scientists' Research",
-        year: "2024",
-        type: "Lead Author",
-        description: "Spearheaded research on machine learning applications in replica exchange molecular dynamics, developing comprehensive analysis tools for molecular simulation performance optimization.",
-        keywords: ["Machine Learning", "Molecular Dynamics", "Data Visualization", "Scientific Computing"]
+        description: "Developed LapseNet, a hybrid CNN-LSTM model for fall detection in indoor settings, achieving 99.43% training accuracy and 100% testing and validation accuracy across 250 videos from four publicly available sources.",
+        keywords: ["Computer Vision", "Deep Learning", "CNN-LSTM", "Fall Detection", "Healthcare AI"],
+        impact: "Indoor fall detection using hybrid CNN and LSTM model"
       },
       {
         title: "A Transformer-Based Approach to Diagnose Amyotrophic Lateral Sclerosis via EEG Analysis",
         authors: "Soham Jain",
-        venue: "17th International Conference on Advanced Computer Theory and Engineering",
+        venue: "17th International Conference on Advanced Computer Theory and Engineering (ICACTE)",
         year: "2024",
         type: "First Author",
-        description: "Independent research developing a transformer-based neural network for rapid ALS diagnosis through EEG signal analysis, achieving diagnostic capability in under two minutes.",
-        keywords: ["Transformers", "EEG Analysis", "Medical AI", "Neural Networks", "ALS Diagnosis"]
+        description: "Introduced a Transformer-based approach to diagnose ALS using the EEGET-ALS dataset with 1,989 recordings, achieving 98.49% training accuracy, 99.33% validation and testing accuracy, with an AUC of 0.9963, precision of 100%, and recall of 96.36%.",
+        keywords: ["Transformers", "EEG Analysis", "Medical AI", "Neural Networks", "ALS Diagnosis"],
+        impact: "Two-minute ALS diagnosis with Transformer-based EEG analysis"
       },
       {
-        title: "ConVox: A Robust Deep Learning Approach for Voice Disorder Detection w/ Multilingual Capabilities",
-        authors: "Soham Jain et al.",
-        venue: "5th International Conference on Big Data, Artificial Intelligence and Internet of Things Engineering",
+        title: "ConVox: A Robust Deep Learning Approach for Voice Disorder Detection with Multilingual Capabilities",
+        authors: "Soham Jain, Jason Hao, Shaurya Jain, Anmol Karan",
+        venue: "5th International Conference on Big Data, Artificial Intelligence and Internet of Things Engineering (ICBAIE)",
         year: "2024",
         type: "First Author",
-        description: "Constructed a robust deep learning model capable of detecting voice disorders across three languages, demonstrating multilingual AI capabilities in healthcare applications.",
-        keywords: ["Voice Analysis", "Multilingual AI", "Healthcare", "Deep Learning", "Signal Processing"]
+        description: "Presented ConVox, a 1D CNN model for voice disorder detection using 22,883 audio samples across four datasets, achieving 99.89% training, 99.91% validation, and 99.74% testing accuracy with multilingual capabilities.",
+        keywords: ["Voice Analysis", "Multilingual AI", "Healthcare", "Deep Learning", "Signal Processing"],
+        impact: "Multilingual voice disorder detection using neural network audio classification"
+      },
+      {
+        title: "RexDash: A Comprehensive Dashboard for Analyzing the Technical Performance of Replica Exchange Molecular Dynamics Simulations",
+        authors: "Soham Jain, Christopher Lockhart",
+        venue: "Journal of Student-Scientists' Research",
+        year: "2024",
+        type: "First Author",
+        description: "Developed RexDash, a Flask-based dashboard featuring Python and Plotly to analyze REMD simulations, providing metrics for exchange rates, replica mixing, trajectories, and potential energy distributions to standardize REMD performance assessment.",
+        keywords: ["Machine Learning", "Molecular Dynamics", "Data Visualization", "Scientific Computing"],
+        impact: "Flask dashboard for standardizing assessment of REMD simulations"
       }
     ],
     awards: [
@@ -289,33 +309,17 @@ const Chatbot = () => {
       }
     ],
     skills: {
-      technical: [
-        { name: "Python", level: 95 },
-        { name: "JavaScript/TypeScript", level: 90 },
-        { name: "Machine Learning", level: 88 },
-        { name: "React/Next.js", level: 85 },
-        { name: "TensorFlow/PyTorch", level: 82 },
-        { name: "SQL/NoSQL", level: 80 }
-      ],
-      soft: [
-        { name: "Leadership", level: 95 },
-        { name: "Communication", level: 92 },
-        { name: "Problem Solving", level: 98 },
-        { name: "Critical Thinking", level: 94 },
-        { name: "Adaptability", level: 90 },
-        { name: "Project Management", level: 85 }
-      ],
-      languages: [
-        { name: "English", level: 100 },
-        { name: "Hindi", level: 85 },
-        { name: "Spanish", level: 65 }
-      ]
+      programmingLanguages: ["Python", "Java", "C++", "C", "C0", "TypeScript", "JavaScript", "HTML", "CSS", "SQL", "MATLAB"],
+      developerTools: ["Git", "Vim", "Visual Studio Code", "AWS EC2", "MongoDB", "Google Cloud", "Firebase", "Jupyter Notebook", "Android Studio", "Expo", "Figma"],
+      frameworks: ["React", "Vite", "Node.js", "Next.js", "Flask", "NumPy", "Pandas", "TensorFlow", "PyTorch", "Keras", "PostgreSQL", "OpenCV", "Tailwind CSS", "Express.js", "Scikit-learn"],
+      aiml: ["TensorFlow", "PyTorch", "Keras", "OpenCV", "Scikit-learn", "Pandas", "NumPy", "Computer Vision", "Deep Learning", "Neural Networks"],
+      webMobile: ["React", "React Native", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "HTML", "CSS", "TypeScript", "JavaScript"]
     },
     social: {
       linkedin: "https://www.linkedin.com/in/soham-jain1/",
       github: "https://github.com/sjain2025",
       youtube: "https://www.youtube.com/@CodingWithSohamJain",
-      website: "http://sohamjain.com/"
+      website: "http://sjain2025.github.io/"
     }
   };
 
@@ -332,18 +336,18 @@ const Chatbot = () => {
     }
 
     // Education
-    if (message.includes('education') || message.includes('school') || message.includes('university')) {
-      return `Soham is currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University (2024-2027, expected graduation 2028) in the School of Computer Science with a focus on AI and Machine Learning. Previously, he attended Thomas Jefferson High School for Science and Technology in Alexandria, VA, where he achieved a 4.535 weighted GPA and 4.0/4.0 unweighted GPA, serving as Captain of Congressional Debate and on the Student Government Association Executive Committee.`;
+    if (message.includes('education') || message.includes('school') || message.includes('university') || message.includes('cmu') || message.includes('carnegie')) {
+      return `Soham is currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University (expected graduation December 2027). He is a Software Developer at ScottyLabs working on the CMUEats team, a Tech Developer for the Association of Computing Machinery, and member of Spikeball and Pickleball Club. His relevant coursework includes Data Structures and Algorithms, Artificial Intelligence, Applied Machine Learning, Computer Vision, and more.\n\nPreviously, he attended Thomas Jefferson High School for Science and Technology in Alexandria, VA, where he achieved a 4.535 weighted GPA and 4.0 unweighted GPA. He served as Captain of Congressional Debate and as Student Government Association Policy Specialist & Executive Committee Member.`;
     }
 
     // Experience
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
-      return `Soham has extensive professional experience:\n\n1. <strong>Vytal.AI</strong> (May 2022 - June 2025): Machine Learning and Software Engineer, led development of NeurOS AI application for brain health assessment. Designed scalable business model securing $1.2M in seed investments and achieved $12.5M company valuation.\n\n2. <strong>Virginia Tech</strong> (April 2024 - June 2025): Computer Science and Quantum Computing Researcher, working with Dr. Atul Mantri on graph coloring applications using Grover's Algorithm.\n\n3. <strong>Youth International Digambar Jain Organization</strong> (Feb 2022 - Present): President and Co-Founder, raised over $25,000 for constructing a Jain temple in Virginia and coordinated community outreach events.`;
+      return `Soham has extensive professional experience:\n\n1. <strong>Vytal.AI</strong> (May 2022 - December 2024): Software and Machine Learning Engineer. Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations. Optimized Python-based biometric processing pipelines and deployed ML models on AWS EC2, scaling to 300+ clinical beta testers. Engineered head-gaze detection algorithm with YOLOv8 delivering 15% higher accuracy.\n\n2. <strong>Virginia Tech</strong> (April 2024 - May 2025): Computer Science and Quantum Computing Researcher. Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q#. Designed quantum-classical hybrid algorithm for graph coloring problem for all 50 U.S. states, achieving 65% reduction in computational cost.\n\n3. <strong>Youth International Digambar Jain Organization</strong> (Feb 2022 - Present): President and Co-Founder. Directs educational programming teaching Jain principles to 150+ students. Oversees fundraising initiatives securing $25,000+ for temple construction in Northern Virginia.`;
     }
 
     // Projects
-    if (message.includes('project') || message.includes('app') || message.includes('application')) {
-      return `Soham has worked on several notable projects:\n\n1. <strong>RoutineRemind</strong>: Provisional patented scheduling app for individuals with speech and cognitive disabilities, deployed on Google Play and Apple App Store.\n\n2. <strong>EyeLS</strong>: Revolutionary gaze-tracking web application for ALS patients to communicate nonverbally, winner of IEEE Technical Excellence Award.\n\n3. <strong>NeurOS (Vytal.AI)</strong>: Smartphone AI application that quantifies brain health using novel gaze-tracking algorithms, part of successful $1.2M funding round with $12.5M company valuation.`;
+    if (message.includes('project') || message.includes('app') || message.includes('application') || message.includes('cmueats')) {
+      return `Soham has worked on several notable projects:\n\n1. <strong>RoutineRemind</strong>: Provisional patented scheduling app for individuals with speech and cognitive disabilities. Presented at Capitol Hill and featured on House.gov. Deployed on Google Play and Apple App Store.\n\n2. <strong>EyeLS</strong>: IEEE Award-winning gaze-tracking web application enabling ALS patients to communicate nonverbally using Kalman Filtering and Monte Carlo algorithms.\n\n3. <strong>CMUEats</strong>: Most used student-made website on CMU campus, providing real-time dining information. Developed as part of ScottyLabs.\n\n4. <strong>Memory Lane</strong>: Mobile app designed for Alzheimer's and memory loss patients to replay memories, featuring interactive Q&A with NLP.\n\n5. <strong>NeurOS</strong>: Smartphone AI application for brain health assessment using gaze-tracking algorithms, developed at Vytal.AI.`;
     }
 
     // Research
@@ -357,23 +361,23 @@ const Chatbot = () => {
     }
 
     // Skills
-    if (message.includes('skill') || message.includes('technology') || message.includes('programming')) {
-      return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python (95%), JavaScript/TypeScript (90%), C++, Java, SQL, MATLAB, Q#\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, Pandas, Scikit-learn (88% proficiency)\n<strong>Web/Mobile</strong>: React, Next.js, React Native, HTML/CSS, Android Studio (85% proficiency)\n<strong>Backend</strong>: Node.js, MongoDB, Google Cloud, Firebase\n<strong>Soft Skills</strong>: Leadership (95%), Problem Solving (98%), Communication (92%), Critical Thinking (94%)`;
+    if (message.includes('skill') || message.includes('technology') || message.includes('programming') || message.includes('tech stack')) {
+      return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python, Java, C++, C, C0, TypeScript, JavaScript, HTML, CSS, SQL, MATLAB\n\n<strong>Developer Tools</strong>: Git, Vim, Visual Studio Code, AWS EC2, MongoDB, Google Cloud, Firebase, Jupyter Notebook, Android Studio, Expo, Figma\n\n<strong>Libraries & Frameworks</strong>: React, Vite, Node.js, Next.js, Flask, NumPy, Pandas, TensorFlow, PyTorch, Keras, PostgreSQL, OpenCV, Tailwind CSS, Express.js, Scikit-learn\n\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, OpenCV, Scikit-learn, Computer Vision, Deep Learning, Neural Networks\n\n<strong>Web/Mobile Development</strong>: React, React Native, Next.js, Vite, Node.js, Express.js, Tailwind CSS`;
     }
 
     // Contact
     if (message.includes('contact') || message.includes('email') || message.includes('reach')) {
-      return `You can contact Soham through:\n\n• <strong>Email</strong>: sohamj@andrew.cmu.edu\n• <strong>LinkedIn</strong>: linkedin.com/in/soham-jain1\n• <strong>GitHub</strong>: github.com/sjain2025\n• <strong>YouTube</strong>: @CodingWithSohamJain\n• <strong>Website</strong>: sohamjain.com\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
+      return `You can contact Soham through:\n\n• <strong>Email</strong>: sohamj@andrew.cmu.edu\n• <strong>LinkedIn</strong>: linkedin.com/in/soham-jain1\n• <strong>GitHub</strong>: github.com/sjain2025\n• <strong>YouTube</strong>: @CodingWithSohamJain\n• <strong>Website</strong>: sjain2025.github.io\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
     }
 
     // Vytal.AI specific
     if (message.includes('vytal') || message.includes('neuros')) {
-      return `Vytal.AI was a startup where Soham worked as a Machine Learning and Software Engineer from May 2022 to June 2025. He led the development of NeurOS, a smartphone AI application that quantifies brain health using novel gaze-tracking algorithms. He designed a scalable business model that secured $1.2 million in seed investments and achieved a $12.5 million valuation. Soham's work involved implementing machine learning models for brain health assessment and leading cross-functional teams in product development.`;
+      return `Vytal.AI was a startup where Soham worked as a Software and Machine Learning Engineer from May 2022 to December 2024. He built a smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations. He optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers. Soham engineered a head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations.`;
     }
 
     // Quantum computing
     if (message.includes('quantum') || message.includes('grover')) {
-      return `Soham conducted quantum computing research at Virginia Tech from April 2024 to June 2025, working with Dr. Atul Mantri on graph coloring applications using Grover's Algorithm. He led a team of undergraduate students, conducted literature reviews on quantum algorithms, and developed novel approaches to quantum graph coloring problems. His research focused on identifying gaps in contemporary quantum computing research.`;
+      return `Soham conducted quantum computing research at Virginia Tech from April 2024 to May 2025, working with Dr. Atul Mantri on advanced quantum algorithms. He led a research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks. He designed a quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python, achieving a 65% reduction in computational cost compared to traditional classical recursive approaches.`;
     }
 
     // Default response
@@ -393,6 +397,7 @@ const Chatbot = () => {
 
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
+    setShowSuggestions(false); // Hide suggestions while processing
     setIsTyping(true);
 
     // Simulate typing delay
@@ -406,6 +411,7 @@ const Chatbot = () => {
 
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
+      setShowSuggestions(true); // Show suggestions after bot responds
     }, 1000);
   };
 
