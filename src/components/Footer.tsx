@@ -5,8 +5,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
+    { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Resume', href: '#resume' },
     { name: 'Education', href: '#education' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },

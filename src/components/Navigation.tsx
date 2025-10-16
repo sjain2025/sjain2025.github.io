@@ -38,9 +38,12 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold text-gradient">
+          <button
+            onClick={() => scrollToSection('#hero')}
+            className="text-xl font-bold text-gradient hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
             Soham Jain
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

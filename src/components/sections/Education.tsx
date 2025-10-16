@@ -20,7 +20,7 @@ const Education = () => {
       institution: "Carnegie Mellon University",
       location: "Pittsburgh, PA",
       degree: "Bachelor of Science in Computer Science",
-      period: "December 2027",
+      period: "May 2027",
       gpa: "",
       achievements: [
         "Software Developer at Scotty Labs on the CMUEats team",
