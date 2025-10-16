@@ -14,41 +14,40 @@ const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
       company: "Vytal.AI",
-      position: "Machine Learning and Software Engineer",
-      period: "May 2022 - June 2025",
-      description: "Led the development of NeurOS, a smartphone AI application that quantifies brain health using novel gaze-tracking algorithms.",
+      position: "Software and Machine Learning Engineer",
+      period: "May 2022 - Dec 2024",
+      location: "Alexandria, Virginia",
+      description: "Developed an AI-powered mobile application for rapid brain health assessment through state-of-the-art eye-tracking technology at a venture capital-backed startup.",
       achievements: [
-        "Implemented machine learning models for brain health assessment",
-        "Designed scalable business model securing $1.2 million in seed investments",
-        "Achieved $12.5 million company valuation",
-        "Led cross-functional team in product development"
+        "Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations",
+        "Optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers",
+        "Engineered head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations"
       ],
-      technologies: ["Python", "TensorFlow", "React Native", "Computer Vision", "Mobile Development"]
+      technologies: ["Python", "OpenCV", "React Native", "AWS EC2", "YOLOv8", "Machine Learning"]
     },
     {
       company: "Virginia Tech",
       position: "Computer Science and Quantum Computing Researcher",
-      period: "April 2024 - June 2025",
-      description: "Conducted cutting-edge research on graph coloring applications using Grover's Algorithm alongisde Dr. Atul Mantri.",
+      period: "April 2024 - May 2025",
+      location: "Blacksburg, Virginia",
+      description: "Conducted advanced research on quantum algorithms and their applications to computational problems under the guidance of Dr. Atul Mantri.",
       achievements: [
-        "Led team of undergraduate students in quantum computing research",
-        "Collaborated with Dr. Atul Mantri on graph coloring with Grover's Algorithm",
-        "Conducted comprehensive literature reviews on quantum algorithms",
-        "Identified gaps in contemporary quantum computing research",
+        "Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks",
+        "Designed quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python",
+        "Achieved 65% reduction in computational cost compared to traditional classical recursive approaches"
       ],
-      technologies: ["Quantum Computing", "Python", "Qiskit", "Q#", "Graph Coloring", "Grover's Algorithm"]
+      technologies: ["Python", "MATLAB", "Qiskit", "Q#", "Quantum Computing", "Algorithm Design"]
     },
     {
       company: "Youth International Digambar Jain Organization",
       position: "President and Co-Founder",
       period: "February 2022 - Present",
-      description: "Lead non-profit organization focused on teaching Jain principles and community service, while managing the website and fundraising.",
+      description: "Lead non-profit organization dedicated to education and community building centered on Jain philosophy and cultural values.",
       achievements: [
-        "Raised over $25,000 for constructing a Jain temple in Virginia",
-        "Developed educational programming on Jain principles",
-        "Coordinate community outreach and educational events"
+        "Direct educational programming that teaches Jain principles including ahimsa (non-violence) and peace to over 150 students",
+        "Oversee fundraising initiatives that have secured more than $25,000 for the construction of a temple serving as a center for worship and cultural events in Northern Virginia"
       ],
-      technologies: ["Web Development", "Project Management", "Fundraising", "Community Outreach"]
+      technologies: ["Leadership", "Program Development", "Fundraising", "Community Engagement"]
     }
   ];
 

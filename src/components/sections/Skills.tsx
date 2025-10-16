@@ -1,5 +1,5 @@
-import { Code2, MessageSquare, Users, Lightbulb, Target, Zap, Wrench, Brain, TrendingUp, MessageCircle, Cpu, RefreshCw, FolderKanban } from 'lucide-react';
-import { SiPython, SiJavascript, SiReact, SiTensorflow, SiMongodb, SiNodedotjs, SiTypescript, SiCplusplus, SiHtml5, SiCss3, SiMysql, SiFlask, SiTailwindcss, SiExpress, SiFirebase, SiPytorch, SiScikitlearn } from 'react-icons/si';
+import { Code2, Wrench, Cloud, Package } from 'lucide-react';
+import { SiPython, SiJavascript, SiReact, SiTensorflow, SiNodedotjs, SiTypescript, SiCplusplus, SiHtml5, SiCss3, SiMysql, SiFlask, SiTailwindcss, SiExpress, SiFirebase, SiC, SiGit, SiVim, SiMongodb, SiGooglecloud, SiJupyter, SiAndroidstudio, SiExpo, SiFigma, SiVite, SiPytorch, SiKeras, SiScikitlearn, SiNextdotjs, SiNumpy, SiPandas, SiPostgresql, SiOpencv } from 'react-icons/si';
 
 const Skills = () => {
   const skillCategories = [
@@ -7,53 +7,58 @@ const Skills = () => {
       category: "Programming Languages",
       icon: <Code2 className="h-6 w-6" />,
       skills: [
-        { name: "Python", level: 100, icon: <SiPython className="h-4 w-4" /> },
-        { name: "Java", level: 100, icon: <Code2 className="h-4 w-4" /> },
-        { name: "TypeScript", level: 100, icon: <SiTypescript className="h-4 w-4" /> },
-        { name: "C/C++", level: 100, icon: <SiCplusplus className="h-4 w-4" /> },
-        { name: "JavaScript", level: 100, icon: <SiJavascript className="h-4 w-4" /> },
-        { name: "HTML/CSS", level: 100, icon: <SiHtml5 className="h-4 w-4" /> },
-        { name: "SQL", level: 100, icon: <SiMysql className="h-4 w-4" /> }
+        { name: "Python", icon: <SiPython className="h-4 w-4" /> },
+        { name: "Java", icon: <Code2 className="h-4 w-4" /> },
+        { name: "C++", icon: <SiCplusplus className="h-4 w-4" /> },
+        { name: "C", icon: <SiC className="h-4 w-4" /> },
+        { name: "C0", icon: <SiC className="h-4 w-4" /> },
+        { name: "TypeScript", icon: <SiTypescript className="h-4 w-4" /> },
+        { name: "JavaScript", icon: <SiJavascript className="h-4 w-4" /> },
+        { name: "HTML", icon: <SiHtml5 className="h-4 w-4" /> },
+        { name: "CSS", icon: <SiCss3 className="h-4 w-4" /> },
+        { name: "SQL", icon: <SiMysql className="h-4 w-4" /> },
+        { name: "MATLAB", icon: <Code2 className="h-4 w-4" /> }
       ]
     },
     {
-      category: "Frameworks & Tools", 
+      category: "Developer Tools", 
       icon: <Wrench className="h-6 w-6" />,
       skills: [
-        { name: "React/Vite", level: 100, icon: <SiReact className="h-4 w-4" /> },
-        { name: "Flask", level: 100, icon: <SiFlask className="h-4 w-4" /> },
-        { name: "Tailwind CSS", level: 100, icon: <SiTailwindcss className="h-4 w-4" /> },
-        { name: "Node.js", level: 100, icon: <SiNodedotjs className="h-4 w-4" /> },
-        { name: "Express.js", level: 100, icon: <SiExpress className="h-4 w-4" /> },
-        { name: "MongoDB/Cloud/Firebase", level: 100, icon: <SiFirebase className="h-4 w-4" /> },
-        { name: "Tensorflow/PyTorch/Keras/Scikit-learn", level: 100, icon: <SiTensorflow className="h-4 w-4" /> }
+        { name: "Git", icon: <SiGit className="h-4 w-4" /> },
+        { name: "Vim", icon: <SiVim className="h-4 w-4" /> },
+        { name: "Visual Studio Code", icon: <Code2 className="h-4 w-4" /> },
+        { name: "AWS EC2", icon: <Cloud className="h-4 w-4" /> },
+        { name: "MongoDB", icon: <SiMongodb className="h-4 w-4" /> },
+        { name: "Google Cloud", icon: <SiGooglecloud className="h-4 w-4" /> },
+        { name: "Firebase", icon: <SiFirebase className="h-4 w-4" /> },
+        { name: "Jupyter Notebook", icon: <SiJupyter className="h-4 w-4" /> },
+        { name: "Android Studio", icon: <SiAndroidstudio className="h-4 w-4" /> },
+        { name: "Expo", icon: <SiExpo className="h-4 w-4" /> },
+        { name: "Figma", icon: <SiFigma className="h-4 w-4" /> }
       ]
     },
     {
-      category: "Languages",
-      icon: <MessageSquare className="h-6 w-6" />,
+      category: "Libraries & Frameworks", 
+      icon: <Package className="h-6 w-6" />,
       skills: [
-        { name: "English", level: 100 },
-        { name: "Hindi", level: 90 },
-        { name: "Spanish", level: 75 }
+        { name: "React", icon: <SiReact className="h-4 w-4" /> },
+        { name: "Vite", icon: <SiVite className="h-4 w-4" /> },
+        { name: "Node.js", icon: <SiNodedotjs className="h-4 w-4" /> },
+        { name: "Next.js", icon: <SiNextdotjs className="h-4 w-4" /> },
+        { name: "Flask", icon: <SiFlask className="h-4 w-4" /> },
+        { name: "NumPy", icon: <SiNumpy className="h-4 w-4" /> },
+        { name: "Pandas", icon: <SiPandas className="h-4 w-4" /> },
+        { name: "TensorFlow", icon: <SiTensorflow className="h-4 w-4" /> },
+        { name: "PyTorch", icon: <SiPytorch className="h-4 w-4" /> },
+        { name: "Keras", icon: <SiKeras className="h-4 w-4" /> },
+        { name: "PostgreSQL", icon: <SiPostgresql className="h-4 w-4" /> },
+        { name: "OpenCV", icon: <SiOpencv className="h-4 w-4" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="h-4 w-4" /> },
+        { name: "Express.js", icon: <SiExpress className="h-4 w-4" /> },
+        { name: "Scikit-learn", icon: <SiScikitlearn className="h-4 w-4" /> }
       ]
     }
   ];
-
-  const SkillBar = ({ name, level, icon }: { name: string; level: number; icon?: React.ReactNode }) => (
-    <div className="mb-3">
-      <div className="flex items-center gap-2 mb-2">
-        {icon && <div className="text-primary">{icon}</div>}
-        <span className="text-sm font-medium text-foreground">{name}</span>
-      </div>
-      <div className="w-full bg-muted rounded-full h-2">
-        <div 
-          className="primary-gradient h-2 rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${level}%` }}
-        ></div>
-      </div>
-    </div>
-  );
 
   return (
     <section id="skills" className="py-20">
@@ -63,59 +68,35 @@ const Skills = () => {
             My <span className="text-gradient">Skills</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-8">
             {skillCategories.map((category, index) => (
               <div 
                 key={category.category}
-                className="card-gradient rounded-xl p-8 shadow-medium hover:shadow-hard transition-smooth animate-fade-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard transition-all duration-300 animate-fade-up border border-primary/20 hover:border-primary/40"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="text-primary">
-                    {category.icon}
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <div className="text-primary">
+                      {category.icon}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">{category.category}</h3>
+                  <h3 className="text-2xl font-bold text-foreground">{category.category}</h3>
                 </div>
 
-                <div className="space-y-4">
-                  {category.skills.map((skill) => (
-                    <SkillBar 
+                <div className="flex flex-wrap gap-3">
+                  {category.skills.map((skill, i) => (
+                    <span 
                       key={skill.name}
-                      name={skill.name}
-                      level={skill.level}
-                      icon={skill.icon}
-                    />
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20 hover:bg-primary/20 hover:scale-105 transition-all duration-200"
+                    >
+                      {skill.icon}
+                      {skill.name}
+                    </span>
                   ))}
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Core Competencies */}
-          <div className="mt-16 text-center">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[
-                { icon: <Target className="h-8 w-8" />, label: "Problem Solving" },
-                { icon: <Brain className="h-8 w-8" />, label: "Critical Thinking" },
-                { icon: <Users className="h-8 w-8" />, label: "Leadership" },
-                { icon: <Lightbulb className="h-8 w-8" />, label: "Innovation" },
-                { icon: <MessageCircle className="h-8 w-8" />, label: "Communication" },
-                { icon: <Cpu className="h-8 w-8" />, label: "Technical Experience" },
-                { icon: <RefreshCw className="h-8 w-8" />, label: "Adaptability" },
-                { icon: <FolderKanban className="h-8 w-8" />, label: "Project Management" }
-              ].map((competency, index) => (
-                <div 
-                  key={competency.label}
-                  className="card-gradient rounded-lg p-6 text-center hover:scale-105 transition-bounce animate-fade-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="text-primary mb-3 flex justify-center">
-                    {competency.icon}
-                  </div>
-                  <p className="text-sm font-medium text-foreground">{competency.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

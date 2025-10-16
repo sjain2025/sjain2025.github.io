@@ -1,11 +1,6 @@
-import { Code, Brain, Rocket, Award, Users, Lightbulb, ArrowDown } from 'lucide-react';
+import { Code, Brain, Rocket, Award, Users, Lightbulb } from 'lucide-react';
 
 const About = () => {
-  const scrollToNext = () => {
-    const educationSection = document.querySelector('#education');
-    educationSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const highlights = [
     {
       icon: <Code className="h-8 w-8" />,
@@ -47,19 +42,38 @@ const About = () => {
             About <span className="text-gradient">Me</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {highlights.map((item, index) => (
               <div 
                 key={index}
-                className="card-gradient rounded-xl p-8 shadow-soft hover:shadow-medium transition-smooth hover:scale-105 animate-fade-up"
+                className="card-gradient rounded-2xl shadow-soft hover:shadow-medium transition-smooth hover:scale-105 animate-fade-up group relative overflow-hidden min-h-[200px] cursor-pointer border-2 border-primary/20 hover:border-primary/60"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-center">
-                  <div className="text-primary mb-4 flex justify-center">
-                    {item.icon}
+                {/* Animated border glow */}
+                <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm" />
+                
+                {/* Default State: Show icon and title centered */}
+                <div className="absolute inset-0 flex flex-col items-center justify-between p-8 group-hover:opacity-0 transition-opacity duration-300">
+                  <div className="flex-1 flex flex-col items-center justify-center">
+                    <div className="text-primary mb-6 flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+                      <div className="scale-150">
+                        {item.icon}
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-foreground text-xl text-center leading-tight">{item.title}</h3>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2 text-base">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  
+                  {/* Visual hint - three dots */}
+                  <div className="flex gap-1.5 opacity-40">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  </div>
+                </div>
+                
+                {/* Hover State: Show description centered */}
+                <div className="absolute inset-0 flex items-center justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                  <p className="text-white text-center text-lg leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
