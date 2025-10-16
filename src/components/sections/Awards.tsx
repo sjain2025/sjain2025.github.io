@@ -56,44 +56,48 @@ const Awards = () => {
   return (
     <section id="awards" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             Awards & <span className="text-gradient">Recognition</span>
           </h2>
-
 
           {/* Awards Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {awards.map((award, index) => (
               <div 
                 key={index}
-                className="relative card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard transition-all duration-300 group animate-fade-up hover:-translate-y-2 hover:scale-105 border border-border/50 hover:border-primary/30"
-                style={{ animationDelay: `${index * 0.1 + 0.4}s` }}
+                className="card-gradient rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 group animate-fade-up relative overflow-hidden border-2 border-primary/20 hover:border-primary/50"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Animated border glow */}
+                <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
+                
                 {/* Award Header */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="text-primary group-hover:scale-110 transition-all duration-300 bg-primary/10 p-3 rounded-xl group-hover:bg-primary/20">
-                    {award.icon}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="text-primary group-hover:scale-105 transition-all duration-300 p-4 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 shadow-md">
+                    <div className="scale-125">
+                      {award.icon}
+                    </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-foreground mb-2">
                       {award.title}
                     </h3>
+                    <span className="px-3 py-1 bg-gradient-to-r from-primary/30 to-primary/20 text-primary rounded-full text-xs font-bold border border-primary/40">
+                      {award.year}
+                    </span>
                   </div>
                 </div>
 
                 {/* Award Content */}
-                <div className="space-y-4">
-                  <p className="text-primary font-semibold">
+                <div className="space-y-3">
+                  <p className="text-primary/90 font-semibold text-base">
                     {award.organization}
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white/70 leading-relaxed text-sm">
                     {award.description}
                   </p>
                 </div>
-
-                {/* Decorative Elements */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>

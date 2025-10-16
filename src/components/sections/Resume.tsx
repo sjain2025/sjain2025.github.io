@@ -13,19 +13,13 @@ const Resume = () => {
   };
 
   return (
-    <section id="resume" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <FileText className="h-6 w-6 text-primary" />
-              <span className="text-sm font-medium text-primary uppercase tracking-wider">
-                Resume
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              My <span className="text-gradient">Resume</span>
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              About <span className="text-gradient">Me</span>
             </h2>
           </div>
 
