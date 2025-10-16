@@ -183,7 +183,7 @@ const Projects = () => {
                     </Button>
                     <Button 
                       variant="outline"
-                      className="hover:scale-105 transition-all duration-200 border border-primary/30 hover:bg-primary/10 flex-1 sm:flex-none"
+                      className="hover:scale-105 transition-all duration-200 border border-primary/30 hover:bg-transparent hover:text-white hover:border-white flex-1 sm:flex-none"
                       asChild
                     >
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer">
@@ -205,7 +205,7 @@ const Projects = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="hover:scale-105 transition-all duration-200 border border-primary/30 hover:bg-primary/10"
+              className="hover:scale-105 transition-all duration-200 border border-primary/30 hover:bg-transparent hover:text-white hover:border-white"
               asChild
             >
               <a href="https://github.com/sjain2025" target="_blank" rel="noopener noreferrer">

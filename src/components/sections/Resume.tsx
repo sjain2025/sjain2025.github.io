@@ -85,7 +85,7 @@ const Resume = () => {
                 </p>
                 <Button
                   variant="outline"
-                  className="w-full"
+                  className="w-full hover:text-white hover:border-white hover:bg-transparent"
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Contact Me

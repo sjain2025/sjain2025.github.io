@@ -130,7 +130,7 @@ const Research = () => {
                   <Button 
                     size="lg"
                     variant="outline"
-                    className="hover:scale-105 transition-transform duration-200 px-6 py-3 text-base flex-shrink-0 ml-4"
+                    className="hover:scale-105 transition-transform duration-200 px-6 py-3 text-base flex-shrink-0 ml-4 hover:text-white hover:border-white hover:bg-transparent"
                     onClick={() => window.open(pub.link, '_blank')}
                   >
                     <ExternalLink className="h-5 w-5 mr-2" />
