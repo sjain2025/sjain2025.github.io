@@ -11,7 +11,6 @@ const Skills = () => {
         { name: "Java", icon: <Code2 className="h-4 w-4" /> },
         { name: "C++", icon: <SiCplusplus className="h-4 w-4" /> },
         { name: "C", icon: <SiC className="h-4 w-4" /> },
-        { name: "C0", icon: <SiC className="h-4 w-4" /> },
         { name: "TypeScript", icon: <SiTypescript className="h-4 w-4" /> },
         { name: "JavaScript", icon: <SiJavascript className="h-4 w-4" /> },
         { name: "HTML", icon: <SiHtml5 className="h-4 w-4" /> },

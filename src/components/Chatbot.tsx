@@ -309,7 +309,7 @@ const Chatbot = () => {
       }
     ],
     skills: {
-      programmingLanguages: ["Python", "Java", "C++", "C", "C0", "TypeScript", "JavaScript", "HTML", "CSS", "SQL", "MATLAB"],
+      programmingLanguages: ["Python", "Java", "C++", "C", "TypeScript", "JavaScript", "HTML", "CSS", "SQL", "MATLAB"],
       developerTools: ["Git", "Vim", "Visual Studio Code", "AWS EC2", "MongoDB", "Google Cloud", "Firebase", "Jupyter Notebook", "Android Studio", "Expo", "Figma"],
       frameworks: ["React", "Vite", "Node.js", "Next.js", "Flask", "NumPy", "Pandas", "TensorFlow", "PyTorch", "Keras", "PostgreSQL", "OpenCV", "Tailwind CSS", "Express.js", "Scikit-learn"],
       aiml: ["TensorFlow", "PyTorch", "Keras", "OpenCV", "Scikit-learn", "Pandas", "NumPy", "Computer Vision", "Deep Learning", "Neural Networks"],
@@ -362,7 +362,7 @@ const Chatbot = () => {
 
     // Skills
     if (message.includes('skill') || message.includes('technology') || message.includes('programming') || message.includes('tech stack')) {
-      return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python, Java, C++, C, C0, TypeScript, JavaScript, HTML, CSS, SQL, MATLAB\n\n<strong>Developer Tools</strong>: Git, Vim, Visual Studio Code, AWS EC2, MongoDB, Google Cloud, Firebase, Jupyter Notebook, Android Studio, Expo, Figma\n\n<strong>Libraries & Frameworks</strong>: React, Vite, Node.js, Next.js, Flask, NumPy, Pandas, TensorFlow, PyTorch, Keras, PostgreSQL, OpenCV, Tailwind CSS, Express.js, Scikit-learn\n\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, OpenCV, Scikit-learn, Computer Vision, Deep Learning, Neural Networks\n\n<strong>Web/Mobile Development</strong>: React, React Native, Next.js, Vite, Node.js, Express.js, Tailwind CSS`;
+      return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python, Java, C++, C, TypeScript, JavaScript, HTML, CSS, SQL, MATLAB\n\n<strong>Developer Tools</strong>: Git, Vim, Visual Studio Code, AWS EC2, MongoDB, Google Cloud, Firebase, Jupyter Notebook, Android Studio, Expo, Figma\n\n<strong>Libraries & Frameworks</strong>: React, Vite, Node.js, Next.js, Flask, NumPy, Pandas, TensorFlow, PyTorch, Keras, PostgreSQL, OpenCV, Tailwind CSS, Express.js, Scikit-learn\n\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, OpenCV, Scikit-learn, Computer Vision, Deep Learning, Neural Networks\n\n<strong>Web/Mobile Development</strong>: React, React Native, Next.js, Vite, Node.js, Express.js, Tailwind CSS`;
     }
 
     // Contact
