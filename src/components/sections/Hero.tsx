@@ -11,7 +11,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="h-screen relative flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Hero background with overlay */}
       <div 
         className="absolute inset-0 z-0 hero-bg"
         style={{
@@ -22,12 +22,12 @@ const Hero = () => {
       </div>
 
 
-      {/* Content */}
+      {/* Main hero content */}
       <div className="relative z-10 container mx-auto px-6 text-center flex flex-col justify-center h-full">
         <div className="max-w-6xl mx-auto">
-          {/* Main Content - Profile Image and Text Side by Side */}
+          {/* Profile image and intro text */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 mb-8">
-            {/* Profile Image */}
+            {/* Professional headshot */}
             <div className="flex-shrink-0 animate-fade-up [animation-delay:0.05s]">
               <img 
                 src={profileImage} 
@@ -38,7 +38,7 @@ const Hero = () => {
               />
             </div>
             
-            {/* Text Content */}
+            {/* Name and title */}
             <div className="flex-1 text-center lg:text-left max-w-2xl mt-14">
               <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-up [animation-delay:0.05s]">
                 <span className="inline-block overflow-hidden border-r-4 border-primary whitespace-nowrap animate-typing-blink bg-gradient-to-r from-white via-primary to-accent bg-clip-text text-transparent">
@@ -55,7 +55,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Call to action buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8 animate-fade-up [animation-delay:0.05s]">
             <Button 
               size="lg"
@@ -86,7 +86,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Social Links */}
+          {/* Social media links */}
           <div className="flex justify-center space-x-4 mb-8 animate-fade-up [animation-delay:0.05s]">
             <Button 
               variant="ghost" 
@@ -136,7 +136,7 @@ const Hero = () => {
 
         </div>
         
-        {/* Scroll Indicator - Fixed at bottom */}
+        {/* Scroll down indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <button 
             onClick={scrollToNext}

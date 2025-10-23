@@ -28,13 +28,13 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Check if EmailJS is configured
+      // See if we have email service configured
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
       
       if (!serviceId || !templateId || !publicKey) {
-        // Fallback to mailto if EmailJS is not configured
+        // If no email service, just open their email client
         const mailtoLink = `mailto:sohamj@andrew.cmu.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
         )}`;
@@ -49,7 +49,7 @@ const Contact = () => {
         return;
       }
       
-      // Prepare template parameters
+      // Set up the email template with user data
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -58,7 +58,7 @@ const Contact = () => {
         to_email: 'sohamj@andrew.cmu.edu'
       };
       
-      // Send email using EmailJS
+      // Actually send the email
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
       
       toast({
@@ -70,7 +70,7 @@ const Contact = () => {
     } catch (error) {
       console.error('Error sending email:', error);
       
-      // Fallback to mailto on error
+      // If something goes wrong, fall back to email client
       const mailtoLink = `mailto:sohamj@andrew.cmu.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`;
@@ -131,7 +131,7 @@ const Contact = () => {
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+            {/* Contact details and social links */}
             <div className="space-y-8 animate-slide-in">
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-6">Let's Connect</h3>
@@ -141,7 +141,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              {/* Contact Details */}
+              {/* Ways to reach me */}
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center space-x-4">
@@ -165,7 +165,7 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Social Links */}
+              {/* Social media profiles */}
               <div>
                 <h4 className="font-semibold text-foreground mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
@@ -192,7 +192,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Send me a message form */}
             <div className="card-gradient rounded-xl p-8 shadow-medium animate-fade-up">
               <h3 className="text-xl font-bold text-foreground mb-6">Send Me a Message</h3>
               

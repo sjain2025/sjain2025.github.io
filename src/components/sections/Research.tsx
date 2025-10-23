@@ -5,14 +5,14 @@ import { useState } from 'react';
 const Research = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // Helper function to get first 1-2 sentences
+  // Show just the first couple sentences to keep cards clean
   const getTruncatedAbstract = (text: string) => {
     const sentences = text.split('. ');
     if (sentences.length <= 2) return text;
     return sentences.slice(0, 2).join('. ') + '...';
   };
 
-  // Helper function to check if text should be truncated
+  // Check if we need to truncate the abstract
   const shouldTruncate = (text: string) => {
     const sentences = text.split('. ');
     return sentences.length > 2;
@@ -89,14 +89,14 @@ const Research = () => {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Impact Badge - Top of Card */}
+                {/* Quick impact summary */}
                 {pub.impact && (
                   <div className="absolute -top-3 left-6 bg-accent text-black px-3 py-1 rounded-full text-base font-medium shadow-lg">
                     🎯 {pub.impact}
                   </div>
                 )}
 
-                {/* Header Section with Button */}
+                {/* Paper title and read button */}
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-4">
@@ -126,7 +126,7 @@ const Research = () => {
                     <p className="text-primary font-medium mb-3 text-lg">{pub.venue}</p>
                   </div>
 
-                  {/* Read Paper Button - Top Right */}
+                  {/* Link to the actual paper */}
                   <Button 
                     size="lg"
                     variant="outline"
@@ -138,7 +138,7 @@ const Research = () => {
                   </Button>
                 </div>
 
-                {/* Abstract Section */}
+                {/* Paper summary - expands on hover */}
                 <div className="mb-4">
                   <p className="text-muted-foreground leading-relaxed">
                     {hoveredIndex === index ? pub.description : getTruncatedAbstract(pub.description)}

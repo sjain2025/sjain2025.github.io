@@ -66,7 +66,7 @@ const Experience = () => {
                 className="card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard hover:scale-105 transition-all duration-300 animate-fade-up border border-primary/20 hover:border-primary/40"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Header Section */}
+                {/* Company and role info */}
                 <div className="mb-6">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                     <div className="flex-1">
@@ -89,7 +89,7 @@ const Experience = () => {
                   <p className="text-base text-muted-foreground leading-relaxed">{exp.description}</p>
                 </div>
 
-                {/* Achievements Section */}
+                {/* What I accomplished */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-foreground mb-4">Key Achievements</h4>
                   <ul className="space-y-3">
@@ -102,7 +102,7 @@ const Experience = () => {
                   </ul>
                 </div>
 
-                {/* Technologies Section */}
+                {/* Tools and technologies I used */}
                 <div>
                   <h4 className="text-lg font-semibold text-foreground mb-4">Technologies Used</h4>
                   <div className="flex flex-wrap gap-3">

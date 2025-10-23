@@ -47,7 +47,7 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Auto-show chatbot after 2 seconds
+  // Show chatbot after initial page load
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
@@ -57,7 +57,7 @@ const Chatbot = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Knowledge base about Soham Jain
+  // Comprehensive information database
   const knowledgeBase = {
     personal: {
       name: "Soham Jain",
@@ -326,7 +326,7 @@ const Chatbot = () => {
   const generateResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
     
-    // Personal information
+    // Personal introduction queries
     if (message.includes('who') && (message.includes('soham') || message.includes('you'))) {
       return `I'm Soham Jain, a Computer Science student at Carnegie Mellon University. I'm passionate about software development and artificial intelligence, with a focus on creating innovative solutions to real-world problems. I have experience in machine learning, mobile development, and research.`;
     }
@@ -335,52 +335,52 @@ const Chatbot = () => {
       return `Soham Jain is an ambitious computer scientist currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University. He has a strong background in AI/ML, software development, and research, with multiple published papers and industry experience.`;
     }
 
-    // Education
+    // Academic background inquiries
     if (message.includes('education') || message.includes('school') || message.includes('university') || message.includes('cmu') || message.includes('carnegie')) {
       return `Soham is currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University (expected graduation May 2027). He is a Software Developer at ScottyLabs working on the CMUEats team, a Tech Developer for the Association of Computing Machinery, and member of Spikeball and Pickleball Club. His relevant coursework includes Data Structures and Algorithms, Artificial Intelligence, Applied Machine Learning, Computer Vision, and more.\n\nPreviously, he attended Thomas Jefferson High School for Science and Technology in Alexandria, VA, where he achieved a 4.535 weighted GPA and 4.0 unweighted GPA. He served as Captain of Congressional Debate and as Student Government Association Policy Specialist & Executive Committee Member.`;
     }
 
-    // Experience
+    // Professional experience queries
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
       return `Soham has extensive professional experience:\n\n1. <strong>Vytal.AI</strong> (May 2022 - December 2024): Software and Machine Learning Engineer. Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations. Optimized Python-based biometric processing pipelines and deployed ML models on AWS EC2, scaling to 300+ clinical beta testers. Engineered head-gaze detection algorithm with YOLOv8 delivering 15% higher accuracy.\n\n2. <strong>Virginia Tech</strong> (April 2024 - May 2025): Computer Science and Quantum Computing Researcher. Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q#. Designed quantum-classical hybrid algorithm for graph coloring problem for all 50 U.S. states, achieving 65% reduction in computational cost.\n\n3. <strong>Youth International Digambar Jain Organization</strong> (Feb 2022 - Present): President and Co-Founder. Directs educational programming teaching Jain principles to 150+ students. Oversees fundraising initiatives securing $25,000+ for temple construction in Northern Virginia.`;
     }
 
-    // Projects
+    // Project portfolio inquiries
     if (message.includes('project') || message.includes('app') || message.includes('application') || message.includes('cmueats')) {
       return `Soham has worked on several notable projects:\n\n1. <strong>RoutineRemind</strong>: Provisional patented scheduling app for individuals with speech and cognitive disabilities. Presented at Capitol Hill and featured on House.gov. Deployed on Google Play and Apple App Store.\n\n2. <strong>EyeLS</strong>: IEEE Award-winning gaze-tracking web application enabling ALS patients to communicate nonverbally using Kalman Filtering and Monte Carlo algorithms.\n\n3. <strong>CMUEats</strong>: Most used student-made website on CMU campus, providing real-time dining information. Developed as part of ScottyLabs.\n\n4. <strong>Memory Lane</strong>: Mobile app designed for Alzheimer's and memory loss patients to replay memories, featuring interactive Q&A with NLP.\n\n5. <strong>NeurOS</strong>: Smartphone AI application for brain health assessment using gaze-tracking algorithms, developed at Vytal.AI.`;
     }
 
-    // Research
+    // Research publications queries
     if (message.includes('research') || message.includes('paper') || message.includes('publication')) {
       return `Soham has published 4 first-author research publications:\n\n1. <strong>LapseNet</strong> (IEEE ICRCV 2024): Hybrid CNN-LSTM approach for fall detection - Best Presentation Award\n2. <strong>ALS Diagnosis</strong> (IEEE ICACTE 2024): Transformer-based EEG analysis for 2-minute ALS diagnosis\n3. <strong>ConVox</strong> (IEEE ICBAIE 2024): Multilingual voice disorder detection system\n4. <strong>RexDash</strong> (Journal publication): Dashboard for molecular dynamics simulations\n\nHis research focuses on AI/ML applications in healthcare, assistive technology, and quantum computing.`;
     }
 
-    // Awards
+    // Recognition and achievements queries
     if (message.includes('award') || message.includes('recognition') || message.includes('achievement')) {
       return `Soham has received numerous awards and recognition:\n\n• <strong>Congressional App Challenge Winner</strong> (2024) - Selected by U.S. Representative Jennifer Wexton, presented at Capitol Hill\n• <strong>IEEE Technical Excellence Award</strong> (2024) - For EyeLS gaze-tracking application for ALS patients\n• <strong>2x Meta Hacker Cup Round 2 Qualifier</strong> (2024) - Top 10% internationally, top 100 in US among 20,000+ participants\n• <strong>Best Presentation Award</strong> (2024) - IEEE conference for LapseNet research presentation\n• <strong>5x International Hackathons Winner</strong> (2022-2024) - Consistent innovation across multiple competitions on Devpost\n• <strong>3x AIME Qualifier</strong> (2021-2023) - Top 2.5% in the nation for American Invitational Mathematics Examination`;
     }
 
-    // Skills
+    // Technical expertise inquiries
     if (message.includes('skill') || message.includes('technology') || message.includes('programming') || message.includes('tech stack')) {
       return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python, Java, C++, C, TypeScript, JavaScript, HTML, CSS, SQL, MATLAB\n\n<strong>Developer Tools</strong>: Git, Vim, Visual Studio Code, AWS EC2, MongoDB, Google Cloud, Firebase, Jupyter Notebook, Android Studio, Expo, Figma\n\n<strong>Libraries & Frameworks</strong>: React, Vite, Node.js, Next.js, Flask, NumPy, Pandas, TensorFlow, PyTorch, Keras, PostgreSQL, OpenCV, Tailwind CSS, Express.js, Scikit-learn\n\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, OpenCV, Scikit-learn, Computer Vision, Deep Learning, Neural Networks\n\n<strong>Web/Mobile Development</strong>: React, React Native, Next.js, Vite, Node.js, Express.js, Tailwind CSS`;
     }
 
-    // Contact
+    // Contact information queries
     if (message.includes('contact') || message.includes('email') || message.includes('reach')) {
       return `You can contact Soham through:\n\n• <strong>Email</strong>: sohamj@andrew.cmu.edu\n• <strong>LinkedIn</strong>: linkedin.com/in/soham-jain1\n• <strong>GitHub</strong>: github.com/sjain2025\n• <strong>YouTube</strong>: @CodingWithSohamJain\n• <strong>Website</strong>: sjain2025.github.io\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
     }
 
-    // Vytal.AI specific
+    // Vytal.AI related inquiries
     if (message.includes('vytal') || message.includes('neuros')) {
       return `Vytal.AI was a startup where Soham worked as a Software and Machine Learning Engineer from May 2022 to December 2024. He built a smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations. He optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers. Soham engineered a head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations.`;
     }
 
-    // Quantum computing
+    // Quantum computing research inquiries
     if (message.includes('quantum') || message.includes('grover')) {
       return `Soham conducted quantum computing research at Virginia Tech from April 2024 to May 2025, working with Dr. Atul Mantri on advanced quantum algorithms. He led a research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks. He designed a quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python, achieving a 65% reduction in computational cost compared to traditional classical recursive approaches.`;
     }
 
-    // Default response
+    // General assistance response
     return `I'd be happy to help you learn more about Soham Jain! You can ask me about his education, work experience, projects, research publications, awards, skills, or how to contact him. What specific aspect would you like to know more about?`;
   };
 
@@ -397,10 +397,10 @@ const Chatbot = () => {
 
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
-    setShowSuggestions(false); // Hide suggestions while processing
+    setShowSuggestions(false); // Hide suggestions during processing
     setIsTyping(true);
 
-    // Simulate typing delay
+    // Response generation delay
     setTimeout(() => {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),

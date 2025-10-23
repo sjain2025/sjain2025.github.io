@@ -25,7 +25,7 @@ const Footer = () => {
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Brand & Description */}
+          {/* About section with social links */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold text-gradient mb-4">Soham Jain</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
@@ -33,7 +33,7 @@ const Footer = () => {
               and entrepreneur.
             </p>
             
-            {/* Social Links */}
+            {/* Social media buttons */}
             <div className="flex space-x-3">
               <Button 
                 variant="ghost" 
@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation shortcuts */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
@@ -101,7 +101,7 @@ const Footer = () => {
 
         </div>
 
-        {/* Bottom Section */}
+        {/* Copyright and tech stack info */}
         <div className="border-t border-border mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
             © {currentYear} Soham Jain. All rights reserved.

@@ -61,7 +61,7 @@ const Awards = () => {
             Awards & <span className="text-gradient">Recognition</span>
           </h2>
 
-          {/* Awards Grid */}
+          {/* Awards in a nice grid layout */}
           <div className="grid md:grid-cols-2 gap-8">
             {awards.map((award, index) => (
               <div 
@@ -69,10 +69,10 @@ const Awards = () => {
                 className="card-gradient rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 group animate-fade-up relative overflow-hidden border-2 border-primary/20 hover:border-primary/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Animated border glow */}
+                {/* Subtle glow effect on hover */}
                 <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
                 
-                {/* Award Header */}
+                {/* Award icon and title */}
                 <div className="flex items-start gap-4 mb-6">
                   <div className="text-primary group-hover:scale-105 transition-all duration-300 p-4 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 shadow-md">
                     <div className="scale-125">
@@ -89,7 +89,7 @@ const Awards = () => {
                   </div>
                 </div>
 
-                {/* Award Content */}
+                {/* Award details and description */}
                 <div className="space-y-3">
                   <p className="text-primary/90 font-semibold text-base">
                     {award.organization}

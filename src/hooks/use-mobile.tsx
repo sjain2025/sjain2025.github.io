@@ -1,7 +1,9 @@
 import * as React from "react";
 
+// Standard mobile breakpoint
 const MOBILE_BREAKPOINT = 768;
 
+// Hook to detect if we're on a mobile device
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);
 

@@ -46,7 +46,7 @@ const Projects = () => {
       description: "Comprehensive dining locations website for Carnegie Mellon University, providing real-time information about campus dining options, hours, and menus. Developed as part of ScottyLabs student organization.",
       icon: <Utensils className="h-8 w-8" />,
       period: "August 2025 - Present",
-      technologies: ["Vite","React", "TypeScript", "HTML", "Vanilla CSS", "Elysia"],
+      technologies: ["Vite", "React", "TypeScript", "HTML", "Vanilla CSS", "Elysia"],
       achievements: [
         "Most used student-made website on campus",
         "Implemented sort by location feature",
@@ -138,9 +138,9 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Two Column Layout for Features and Tech */}
+                {/* Split into features and tech stack */}
                 <div className="grid grid-cols-1 gap-6 mb-6">
-                  {/* Key Features & Achievements */}
+                  {/* What makes this project special */}
                   <div>
                     <h4 className="font-bold text-white text-base mb-3">Key Features & Achievements</h4>
                     <ul className="space-y-2">
@@ -153,7 +153,7 @@ const Projects = () => {
                     </ul>
                   </div>
 
-                  {/* Technologies */}
+                  {/* Tech stack used */}
                   <div>
                     <h4 className="font-bold text-white text-base mb-3">Technologies</h4>
                     <div className="flex flex-wrap gap-2">
@@ -169,7 +169,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
+                {/* Links to demo and source code */}
                 {project.title !== "NeurOS" && (
                   <div className="flex flex-wrap gap-3 pt-4 border-t border-primary/20">
                     <Button 
@@ -197,7 +197,7 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* More Projects CTA */}
+          {/* Call to action for more projects */}
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-6">
               Want to see more of my work? Check out my GitHub!

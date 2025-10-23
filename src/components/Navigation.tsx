@@ -45,7 +45,7 @@ const Navigation = () => {
             Soham Jain
           </button>
 
-          {/* Desktop Navigation */}
+          {/* Desktop menu - hidden on mobile */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -59,7 +59,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Hamburger menu for mobile */}
           <Button
             variant="ghost"
             size="icon"
@@ -70,7 +70,7 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile menu dropdown */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>

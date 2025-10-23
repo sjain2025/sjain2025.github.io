@@ -44,7 +44,7 @@ const Education = () => {
 
   return (
     <section id="education" className="py-20 hero-gradient relative overflow-hidden">
-      {/* Background decoration */}
+      {/* Subtle background effects */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
@@ -52,7 +52,7 @@ const Education = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
+          {/* Page title */}
           <div className="text-center mb-16 animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               My <span className="text-gradient">Education</span>

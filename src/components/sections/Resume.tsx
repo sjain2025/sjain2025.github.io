@@ -16,16 +16,16 @@ const Resume = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
+          {/* Page title */}
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold">
               About <span className="text-gradient">Me</span>
             </h2>
           </div>
 
-          {/* Resume Content */}
+          {/* Resume PDF and sidebar */}
           <div className="grid lg:grid-cols-3 gap-8 items-start">
-            {/* PDF Viewer */}
+            {/* Embedded resume PDF */}
             <div className="lg:col-span-2">
               <div className="bg-card rounded-2xl shadow-hard border border-border overflow-hidden">
                 <div className="bg-muted/50 px-6 py-4 border-b border-border">
@@ -56,9 +56,9 @@ const Resume = () => {
               </div>
             </div>
 
-            {/* Sidebar Info */}
+            {/* Download and contact options */}
             <div className="space-y-6">
-              {/* Download Card */}
+              {/* Download resume button */}
               <div className="bg-card rounded-2xl p-6 shadow-medium border border-border">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <Download className="h-5 w-5 text-primary" />
@@ -77,7 +77,7 @@ const Resume = () => {
               </div>
 
 
-              {/* Contact Info */}
+              {/* Get in touch section */}
               <div className="bg-card rounded-2xl p-6 shadow-medium border border-border">
                 <h3 className="text-xl font-semibold mb-4">Contact Me</h3>
                 <p className="text-muted-foreground mb-4">
