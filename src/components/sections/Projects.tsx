@@ -7,7 +7,6 @@ const Projects = () => {
       title: "RoutineRemind",
       description: "Provisional patented, utility patent-pending scheduling application specifically designed for individuals with speech and cognitive disabilities. Currently being deployed on both Google Play Store and Apple App Store.",
       icon: <Smartphone className="h-8 w-8" />,
-      status: "Patent-Pending Mobile App",
       period: "June 2022 - Present",
       technologies: ["React", "JavaScript", "TypeScript", "Python", "HTML/CSS", "Firebase", "Rasa"],
       achievements: [
@@ -27,7 +26,6 @@ const Projects = () => {
       title: "EyeLS",
       description: "Gaze-tracking web application designed to enable ALS patients to communicate nonverbally. Implements Kalman Filtering and Monte Carlo algorithms for precise eye movement detection.",
       icon: <Eye className="h-8 w-8" />,
-      status: "IEEE Award Winner",
       period: "August 2023 - Present",
       technologies: ["JavaScript", "HTML/CSS", "Computer Vision", "Kalman Filtering", "Monte Carlo"],
       achievements: [
@@ -80,7 +78,6 @@ const Projects = () => {
       title: "NeurOS",
       description: "Smartphone AI application that quantifies brain health using gaze-tracking algorithms. Developed during my time at Vytal.AI.",
       icon: <Users className="h-8 w-8" />,
-      status: "Funded Startup",
       period: "May 2022 - Present",
       technologies: ["React Native", "Python", "AI/ML", "Mobile Development", "Computer Vision"],
       achievements: [
@@ -124,11 +121,6 @@ const Projects = () => {
                     <h3 className="text-2xl font-bold text-foreground mb-2">{project.title}</h3>
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="text-muted-foreground font-medium text-sm">{project.period}</span>
-                      {project.status && (
-                        <span className="px-3 py-1 bg-gradient-to-r from-primary/30 to-primary/20 text-primary rounded-full text-xs font-bold border border-primary/40">
-                          {project.status}
-                        </span>
-                      )}
                     </div>
                   </div>
                 </div>
