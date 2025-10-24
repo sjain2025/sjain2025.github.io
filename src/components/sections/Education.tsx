@@ -155,10 +155,6 @@ const Education = () => {
                   {/* Achievements */}
                   <div className="pl-[4.5rem] border-l-2 border-primary/20 group-hover:border-primary/40 transition-colors">
                     <div className="pl-6">
-                      <h5 className="font-bold text-foreground mb-4 flex items-center gap-2">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                        Key Achievements
-                      </h5>
                       <ul className="space-y-3">
                         {edu.achievements.map((achievement, i) => (
                           <li 

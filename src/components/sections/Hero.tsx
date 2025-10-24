@@ -46,7 +46,7 @@ const Hero = () => {
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-white font-bold mb-10 animate-fade-up [animation-delay:0.05s] whitespace-nowrap">Software Engineer | AI Researcher | Entrepreneur</p>
+              <p className="text-xl md:text-2xl text-white font-bold mb-10 animate-fade-up [animation-delay:0.05s] whitespace-nowrap">Software Engineer  •  AI Researcher  •  Entrepreneur</p>
               
               <p className="text-xl md:text-2xl text-white/90 mb-12 animate-fade-up [animation-delay:0.05s] leading-relaxed">
               Ambitious computer scientist with a passion for software development and artificial intelligence. Leveraging

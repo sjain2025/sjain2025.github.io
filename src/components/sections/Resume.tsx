@@ -32,7 +32,7 @@ const Resume = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <FileText className="h-5 w-5 text-primary" />
-                      <span className="font-medium">Soham Jain - Resume</span>
+                      <span className="font-medium">Soham_Jain_Resume</span>
                     </div>
                     <Button
                       variant="ghost"
@@ -64,9 +64,6 @@ const Resume = () => {
                   <Download className="h-5 w-5 text-primary" />
                   Download Resume
                 </h3>
-                <p className="text-muted-foreground mb-4">
-                  Get the latest version of my resume in PDF format.
-                </p>
                 <Button
                   onClick={handleDownload}
                   className="w-full primary-gradient hover:scale-105 transition-all duration-300 shadow-medium hover:shadow-hard"
