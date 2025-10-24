@@ -21,7 +21,7 @@ const Awards = () => {
     {
       title: "2x Meta Hacker Cup Round 2 Qualifier",
       organization: "Meta (Facebook)",
-      year: "2024",
+      year: "2023-2024",
       icon: <Code className="h-8 w-8" />,
       description: "Achieved top 10% internationally and top 100 in the United States while competing against over 20,000 software developers worldwide.",
       category: "Competitive Programming"
