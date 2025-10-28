@@ -10,12 +10,11 @@ const Projects = () => {
       period: "June 2022 - Present",
       technologies: ["React", "JavaScript", "TypeScript", "Python", "HTML/CSS", "Firebase", "Rasa"],
       achievements: [
-        "Presented app at Capitol Hill",
-        "Featured on House.gov, FFXnow, LoudounNow, Fairfax Times, & more", 
-        "Developed accessibility features for children with autism",
-        "User-friendly interface designed for individuals with special needs",
-        "Real-time scheduling and reminder system",
-        "Fully functional login authentication system"
+        "First place in Congressional App Challenge (top 4%)",
+        "Demoed project to Representatives at Capitol Hill",
+        "Integration in local schools for children with autism",
+        "Uses NLP and audio classification for personalized schedules",
+        "Patent-pending technology for speech and cognitive disabilities"
       ],
       links: {
         demo: "https://www.congressionalappchallenge.us/22-va10/",
@@ -29,10 +28,12 @@ const Projects = () => {
       period: "August 2023 - Present",
       technologies: ["JavaScript", "HTML/CSS", "Computer Vision", "Kalman Filtering", "Monte Carlo"],
       achievements: [
-        "Recognized with IEEE Technical Excellence Award",
-        "Implements novel gaze-tracking algorithms",
-        "Cost-effective, accessible alternative to modern eye-tracking devices",
-        "Real-time eye tracking with high accuracy"
+        "Awarded IEEE Technical Excellence for ridge regression implementation",
+        "92% calibration accuracy for eye movement to click mapping",
+        "Saves over $15,000 annually for patients with neurodegenerative disorders",
+        "Enables nonverbal communication for ALS patients",
+        "Monte-Carlo Kalman Filtering for refined gaze predictions",
+        "Cost-effective alternative to expensive eye-tracking devices"
       ],
       links: {
         demo: "https://www.youtube.com/watch?v=YAlBLGYtgLA",
@@ -46,11 +47,12 @@ const Projects = () => {
       period: "August 2025 - Present",
       technologies: ["Vite", "React", "TypeScript", "HTML", "Vanilla CSS", "Elysia"],
       achievements: [
+        "Serves 10,000+ users monthly with live API data",
+        "Geospatial routing system using REST APIs and Apple Maps",
+        "Sorts dining locations by walking distance",
+        "Streamlines menus and specials for campus community",
         "Most used student-made website on campus",
-        "Implemented sort by location feature",
-        "Real-time dining information and hours",
-        "Interactive campus dining map",
-        "Mobile and web responsive design"
+        "Real-time integration with Dining Services"
       ],
       links: {
         demo: "https://cmueats.com/",
@@ -59,7 +61,7 @@ const Projects = () => {
     },
     {
       title: "Memory Lane",
-      description: "Mobile application designed to provide people with Alzheimer's and other memory loss-related conditions with a platform to replay memories from their past. The app requires a login through email for each user, and upon authentication, the user is presented with three options: Add an entry, Ask a question, and a unique feature called \"A Memory A Day\".",
+      description: "Mobile application designed to provide people with Alzheimer's and other memory loss-related conditions with a platform to replay memories from their past. The app requires a login through email for each user, and upon authentication, the user is presented with three options: Add an entry, Ask a question, and a unique feature called \"A Memory A Day.\"",
       icon: <Brain className="h-8 w-8" />,
       period: "March 2023 - June 2024",
       technologies: ["React Native", "JavaScript", "Firebase", "TypeScript", "HTML/CSS"],
