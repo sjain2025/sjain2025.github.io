@@ -47,7 +47,7 @@ const Experience = () => {
         "Direct educational programming that teaches Jain principles including ahimsa (non-violence) and peace to over 150 students",
         "Oversee fundraising initiatives that have secured more than $25,000 for the construction of a temple serving as a center for worship and cultural events in Northern Virginia"
       ],
-      technologies: ["Leadership", "Program Development", "Fundraising", "Community Engagement"]
+      technologies: []
     }
   ];
 
@@ -103,19 +103,21 @@ const Experience = () => {
                 </div>
 
                 {/* Tools and technologies I used */}
-                <div>
-                  <h4 className="text-lg font-semibold text-foreground mb-4">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-3">
-                    {exp.technologies.map((tech, i) => (
-                      <span 
-                        key={i}
-                        className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {exp.technologies.length > 0 && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground mb-4">Technologies Used</h4>
+                    <div className="flex flex-wrap gap-3">
+                      {exp.technologies.map((tech, i) => (
+                        <span 
+                          key={i}
+                          className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
