@@ -1,9 +1,22 @@
 import { FileText, Award, Users, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useState } from 'react';
 
 const Research = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  type Publication = {
+    title: string;
+    authors: string;
+    venue: string;
+    type: string;
+    award: string | null;
+    description: string;
+    keywords: string[];
+    impact: string | null;
+    link: string;
+  };
+
+  const [selectedPublication, setSelectedPublication] = useState<Publication | null>(null);
 
   // Show just the first couple sentences to keep cards clean
   const getTruncatedAbstract = (text: string) => {
@@ -12,13 +25,7 @@ const Research = () => {
     return sentences.slice(0, 2).join('. ') + '...';
   };
 
-  // Check if we need to truncate the abstract
-  const shouldTruncate = (text: string) => {
-    const sentences = text.split('. ');
-    return sentences.length > 2;
-  };
-
-  const publications = [
+  const publications: Publication[] = [
     {
       title: "LapseNet: A Hybrid CNN-LSTM Approach for Accurate and Efficient Vision-Based Fall Detection",
       authors: "Soham Jain, Shaurya Jain, Anmol Karan",
@@ -80,14 +87,17 @@ const Research = () => {
             {publications.map((pub, index) => (
               <div 
                 key={index}
-                className={`card-gradient rounded-xl p-8 shadow-medium transition-all duration-300 animate-fade-up border border-primary/20 relative ${
-                  hoveredIndex === index 
-                    ? 'hover:shadow-hard hover:scale-105 border-primary/40' 
-                    : 'hover:shadow-hard hover:scale-105'
-                }`}
+                role="button"
+                tabIndex={0}
+                className="card-gradient rounded-xl p-8 shadow-medium transition-all duration-300 animate-fade-up border border-primary/20 relative hover:shadow-hard hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/15 focus:outline-none focus:ring-2 focus:ring-primary/40 focus-visible:ring-offset-2 cursor-pointer"
                 style={{ animationDelay: `${index * 0.2}s` }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => setSelectedPublication(pub)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    setSelectedPublication(pub);
+                  }
+                }}
               >
                 {/* Quick impact summary */}
                 {pub.impact && (
@@ -130,8 +140,11 @@ const Research = () => {
                   <Button 
                     size="lg"
                     variant="outline"
-                    className="hover:scale-105 transition-transform duration-200 px-6 py-3 text-base flex-shrink-0 ml-4 hover:text-white hover:border-white hover:bg-transparent"
-                    onClick={() => window.open(pub.link, '_blank')}
+                    className="transition-transform duration-200 px-6 py-3 text-base flex-shrink-0 ml-4 hover:text-white hover:border-white hover:bg-transparent"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      window.open(pub.link, '_blank');
+                    }}
                   >
                     <ExternalLink className="h-5 w-5 mr-2" />
                     Read Paper
@@ -141,7 +154,7 @@ const Research = () => {
                 {/* Paper summary - expands on hover */}
                 <div className="mb-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    {hoveredIndex === index ? pub.description : getTruncatedAbstract(pub.description)}
+                    {getTruncatedAbstract(pub.description)}
                   </p>
                 </div>
 
@@ -150,6 +163,55 @@ const Research = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={!!selectedPublication} onOpenChange={(open) => !open && setSelectedPublication(null)}>
+        {selectedPublication && (
+          <DialogContent className="max-w-5xl sm:max-w-6xl p-8 sm:p-10 max-h-[85vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-2xl">{selectedPublication.title}</DialogTitle>
+              <DialogDescription className="space-y-4">
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p className="font-medium text-foreground">{selectedPublication.authors}</p>
+                  <p className="text-primary text-base font-semibold">{selectedPublication.venue}</p>
+                  <p className="text-foreground">
+                    <span className="font-medium">Role: </span>
+                    {selectedPublication.type}
+                  </p>
+                  {selectedPublication.award && (
+                    <p className="text-accent font-semibold flex items-center gap-2">
+                      <Award className="h-4 w-4" />
+                      {selectedPublication.award}
+                    </p>
+                  )}
+                </div>
+                <p className="text-base leading-relaxed text-foreground">
+                  {selectedPublication.description}
+                </p>
+                {!!selectedPublication.keywords.length && (
+                  <div className="flex flex-wrap gap-2">
+                    {selectedPublication.keywords.map((keyword) => (
+                      <span key={keyword} className="px-3 py-1 text-xs font-semibold uppercase tracking-wide bg-primary/10 text-primary rounded-full">
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-6 flex justify-end">
+              <Button
+                size="lg"
+                variant="outline"
+                className="transition-transform duration-200 px-6 py-3 text-base hover:text-white hover:border-white hover:bg-transparent gap-2"
+                onClick={() => window.open(selectedPublication.link, '_blank')}
+              >
+                <ExternalLink className="h-5 w-5" />
+                Read Paper
+              </Button>
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
     </section>
   );
 };
