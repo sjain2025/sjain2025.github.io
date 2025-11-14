@@ -95,7 +95,7 @@ const Education = () => {
             {education.map((edu, index) => (
               <div 
                 key={index}
-                className="card-gradient rounded-2xl p-8 shadow-hard hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 animate-fade-up border border-primary/30 hover:border-primary/50 group relative overflow-hidden"
+                className="card-gradient rounded-2xl p-8 shadow-hard hover:shadow-2xl transition-all duration-300 animate-fade-up border border-primary/30 hover:border-primary/50 group relative overflow-hidden"
                 style={{ animationDelay: `${(index + 2) * 0.1}s` }}
               >
                 {/* Decorative elements */}
