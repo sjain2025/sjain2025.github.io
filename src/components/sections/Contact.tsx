@@ -98,12 +98,6 @@ const Contact = () => {
       label: "Phone",
       value: "+1 (240) 728-8946",
       link: "tel:+12407288946"
-    },
-    {
-      icon: <MapPin className="h-6 w-6" />,
-      label: "Location",
-      value: "Ashburn, VA / Pittsburgh, PA",
-      link: null
     }
   ];
 
@@ -130,17 +124,13 @@ const Contact = () => {
             Contact <span className="text-gradient">Me</span>
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact details and social links */}
-            <div className="space-y-8 animate-slide-in">
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">Let's Connect</h3>
-              </div>
-
+            <div className="flex flex-col gap-10 animate-slide-in">
               {/* Ways to reach me */}
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center space-x-4">
+                  <div key={index} className="flex items-start gap-4">
                     <div className="text-primary">
                       {info.icon}
                     </div>
@@ -163,8 +153,7 @@ const Contact = () => {
 
               {/* Social media profiles */}
               <div>
-                <h4 className="font-semibold text-foreground mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
@@ -189,9 +178,7 @@ const Contact = () => {
             </div>
 
             {/* Send me a message form */}
-            <div className="card-gradient rounded-xl p-8 shadow-medium animate-fade-up">
-              <h3 className="text-xl font-bold text-foreground mb-6">Send Me a Message</h3>
-              
+            <div className="card-gradient rounded-xl p-8 shadow-medium animate-fade-up">              
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
