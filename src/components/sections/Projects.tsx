@@ -109,9 +109,6 @@ const Projects = () => {
                 className={`card-gradient rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 animate-fade-up group relative overflow-hidden border-2 border-primary/20 hover:border-primary/50 ${project.title === "NeurOS" ? "lg:col-span-2 lg:max-w-2xl lg:mx-auto" : ""}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Animated border glow */}
-                <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
-                
                 {/* Project Header */}
                 <div className="flex items-start gap-4 mb-6">
                   <div className="text-primary group-hover:scale-105 transition-all duration-300 p-4 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 shadow-md">

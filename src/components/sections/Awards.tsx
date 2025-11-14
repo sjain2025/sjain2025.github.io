@@ -58,7 +58,7 @@ const Awards = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Awards & <span className="text-gradient">Recognition</span>
+            Honors & <span className="text-gradient">Awards</span>
           </h2>
 
           {/* Awards in a nice grid layout */}
@@ -69,9 +69,6 @@ const Awards = () => {
                 className="card-gradient rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 group animate-fade-up relative overflow-hidden border-2 border-primary/20 hover:border-primary/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Subtle glow effect on hover */}
-                <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
-                
                 {/* Award icon and title */}
                 <div className="flex items-start gap-4 mb-6">
                   <div className="text-primary group-hover:scale-105 transition-all duration-300 p-4 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 shadow-md">
