@@ -63,7 +63,7 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div 
                 key={index}
-                className="card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard hover:scale-105 transition-all duration-300 animate-fade-up border border-primary/20 hover:border-primary/40"
+                className="card-gradient rounded-2xl p-8 shadow-medium hover:shadow-hard transition-all duration-300 animate-fade-up border border-primary/20 hover:border-primary/40"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Company and role info */}
