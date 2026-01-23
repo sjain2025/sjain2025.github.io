@@ -35,7 +35,7 @@ const Contact = () => {
       
       if (!serviceId || !templateId || !publicKey) {
         // If no email service, just open their email client
-        const mailtoLink = `mailto:sohamj@andrew.cmu.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+        const mailtoLink = `mailto:jainsoham01@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
           `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
         )}`;
         window.location.href = mailtoLink;
@@ -55,7 +55,7 @@ const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_email: 'sohamj@andrew.cmu.edu'
+        to_email: 'jainsoham01@gmail.com'
       };
       
       // Actually send the email
@@ -71,7 +71,7 @@ const Contact = () => {
       console.error('Error sending email:', error);
       
       // If something goes wrong, fall back to email client
-      const mailtoLink = `mailto:sohamj@andrew.cmu.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:jainsoham01@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`;
       window.location.href = mailtoLink;
@@ -90,8 +90,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       label: "Email",
-      value: "sohamj@andrew.cmu.edu",
-      link: "mailto:sohamj@andrew.cmu.edu"
+      value: "jainsoham01@gmail.com",
+      link: "mailto:jainsoham01@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6" />,

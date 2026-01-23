@@ -92,7 +92,7 @@ const Hero = () => {
               className="group relative rounded-full hover:scale-110 transition-all duration-300 hover:bg-primary/15 w-14 h-14 backdrop-blur-sm border border-primary/35 hover:border-primary/60"
               asChild
             >
-              <a href="mailto:sohamj@andrew.cmu.edu" aria-label="Email">
+              <a href="mailto:jainsoham01@gmail.com" aria-label="Email">
                 <Mail className="h-6 w-6 transition-colors group-hover:text-primary" />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>

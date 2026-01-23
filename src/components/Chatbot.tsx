@@ -62,7 +62,7 @@ const Chatbot = () => {
     personal: {
       name: "Soham Jain",
       title: "Computer Science Student at Carnegie Mellon University",
-      email: "sohamj@andrew.cmu.edu",
+      email: "jainsoham01@gmail.com",
       location: "Pittsburgh, PA",
       description: "Ambitious computer scientist with a passion for software development and artificial intelligence. Leveraging interpersonal skills and technical proficiency to innovate modern solutions to real-world problems."
     },
@@ -367,7 +367,7 @@ const Chatbot = () => {
 
     // Contact information queries
     if (message.includes('contact') || message.includes('email') || message.includes('reach')) {
-      return `You can contact Soham through:\n\n• <strong>Email</strong>: sohamj@andrew.cmu.edu\n• <strong>LinkedIn</strong>: linkedin.com/in/soham-jain1\n• <strong>GitHub</strong>: github.com/sjain2025\n• <strong>YouTube</strong>: @CodingWithSohamJain\n• <strong>Website</strong>: sjain2025.github.io\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
+      return `You can contact Soham through:\n\n• <strong>Email</strong>: jainsoham01@gmail.com\n• <strong>LinkedIn</strong>: linkedin.com/in/soham-jain1\n• <strong>GitHub</strong>: github.com/sjain2025\n• <strong>YouTube</strong>: @CodingWithSohamJain\n• <strong>Website</strong>: sjain2025.github.io\n\nHe's currently based in Pittsburgh, PA while studying at Carnegie Mellon University.`;
     }
 
     // Vytal.AI related inquiries
