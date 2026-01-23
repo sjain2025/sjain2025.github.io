@@ -3,16 +3,15 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 const Education = () => {
   const relevantCourses = [
     "Data Structures and Algorithms",
-    "Artificial Intelligence",
-    "Applied Machine Learning",
-    "Discrete Mathematics",
-    "Computational Linear Algebra",
+    "Computer Systems",
+    "Functional Programming",
+    "Discrete Math",
+    "Linear Algebra",
     "Multivariable Calculus",
+    "Artificial Intelligence",
+    "Machine Learning",
     "Computer Vision",
-    "Mobile and Web Application Development",
-    "Research Statistics",
-    "Psychology",
-    "Biology"
+    "Mobile/Web App Development"
   ];
 
   const education = [
@@ -20,12 +19,12 @@ const Education = () => {
       institution: "Carnegie Mellon University",
       location: "Pittsburgh, PA",
       degree: "Bachelor of Science in Computer Science",
-      period: "May 2027",
+      period: "May 2028",
       gpa: "",
       achievements: [
-        "Software Developer at Scotty Labs on the CMUEats team",
-        "Association of Computing Machinery Tech Developer",
-        "Spikeball and Pickleball Club"
+        "Software Engineer at ScottyLabs on the CMUEats team",
+        "Software Developer at Association of Computing Machinery (ACM)",
+        "Spikeball and Pickleball Club Member"
       ]
     },
     {
@@ -37,7 +36,7 @@ const Education = () => {
       gpa: "4.535 (weighted) | 4.0 (unweighted)",
       achievements: [
         "Captain of Congressional Debate",
-        "Student Government Association Policy Specialist & Executive Committee Member",
+        "Student Government Association Policy Specialist and Executive Committee Member",
       ]
     }
   ];

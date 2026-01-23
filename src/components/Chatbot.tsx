@@ -71,10 +71,10 @@ const Chatbot = () => {
         institution: "Carnegie Mellon University",
         degree: "Bachelor of Science in Computer Science",
         location: "Pittsburgh, PA",
-        period: "May 2027",
-        expectedGraduation: "May 2027",
+        period: "May 2028",
+        expectedGraduation: "May 2028",
         school: "School of Computer Science",
-        activities: ["Software Developer at ScottyLabs on the CMUEats team", "Association of Computing Machinery Tech Developer", "Spikeball and Pickleball Club"],
+        activities: ["Software Engineer at ScottyLabs on the CMUEats team", "Software Developer at Association of Computing Machinery", "Spikeball and Pickleball Club Member"],
         coursework: ["Data Structures and Algorithms", "Artificial Intelligence", "Applied Machine Learning", "Discrete Mathematics", "Computational Linear Algebra", "Multivariable Calculus", "Computer Vision", "Mobile and Web Application Development"]
       },
       highSchool: {
@@ -337,7 +337,7 @@ const Chatbot = () => {
 
     // Academic background inquiries
     if (message.includes('education') || message.includes('school') || message.includes('university') || message.includes('cmu') || message.includes('carnegie')) {
-      return `Soham is currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University (expected graduation May 2027). He is a Software Developer at ScottyLabs working on the CMUEats team, a Tech Developer for the Association of Computing Machinery, and member of Spikeball and Pickleball Club. His relevant coursework includes Data Structures and Algorithms, Artificial Intelligence, Applied Machine Learning, Computer Vision, and more.\n\nPreviously, he attended Thomas Jefferson High School for Science and Technology in Alexandria, VA, where he achieved a 4.535 weighted GPA and 4.0 unweighted GPA. He served as Captain of Congressional Debate and as Student Government Association Policy Specialist & Executive Committee Member.`;
+      return `Soham is currently pursuing a Bachelor of Science in Computer Science at Carnegie Mellon University (expected graduation May 2028). He is a Software Engineer at ScottyLabs working on the CMUEats team, a Tech Developer for the Association of Computing Machinery, and member of Spikeball and Pickleball Club. His relevant coursework includes Data Structures and Algorithms, Artificial Intelligence, Applied Machine Learning, Computer Vision, and more.\n\nPreviously, he attended Thomas Jefferson High School for Science and Technology in Alexandria, VA, where he achieved a 4.535 weighted GPA and 4.0 unweighted GPA. He served as Captain of Congressional Debate and as Student Government Association Policy Specialist & Executive Committee Member.`;
     }
 
     // Professional experience queries
@@ -453,7 +453,6 @@ const Chatbot = () => {
             </div>
             <div>
               <h3 className="font-semibold text-foreground">Ask about Soham</h3>
-              <p className="text-xs text-muted-foreground">AI Assistant</p>
             </div>
           </div>
           <div className="flex items-center gap-2">

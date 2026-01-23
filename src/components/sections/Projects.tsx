@@ -132,7 +132,7 @@ const Projects = () => {
                 {/* Split into features and tech stack */}
                 <div className="grid grid-cols-1 gap-6 mb-6">
                   {/* What makes this project special */}
-                  <div>
+                  {/* <div>
                     <h4 className="font-bold text-white text-base mb-3">Key Features & Achievements</h4>
                     <ul className="space-y-2">
                       {project.achievements.map((achievement, i) => (
@@ -142,7 +142,7 @@ const Projects = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </div> */}
 
                   {/* Tech stack used */}
                   <div>
