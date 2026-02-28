@@ -4,7 +4,7 @@ interface ExperienceItem {
   company: string;
   position: string;
   period: string;
-  description: string;
+  description?: string;
   achievements: string[];
   technologies: string[];
   location?: string;
@@ -13,46 +13,55 @@ interface ExperienceItem {
 const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
-      company: "Vytal.AI",
-      position: "Software and Machine Learning Engineer",
-      period: "May 2022 - Dec 2024",
-      location: "Alexandria, Virginia",
-      description: "Developed an AI-powered mobile application for rapid brain health assessment through state-of-the-art eye-tracking technology at a venture capital-backed startup.",
+      company: "ScottyLabs",
+      position: "Software Engineer",
+      period: "Aug 2025 – Present",
+      location: "Pittsburgh, PA",
       achievements: [
-        "Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations",
-        "Optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers",
-        "Engineered head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations"
+        "Integrate live data from Dining Services into CMUEats using React, TypeScript, and Railway, streamlining menus and specials for 10,000+ users each month across mobile and web.",
+        "Lead the development of a geospatial routing system with JavaScript and REST APIs to rank dining locations by walking distance, resulting in a 30-50% reduction in search time.",
+        "Automate CI/CD pipelines for 50+ developers with GitHub Actions and Docker to enforce linting and unit testing."
       ],
-      technologies: ["Python", "OpenCV", "React Native", "AWS EC2", "YOLOv8", "Machine Learning"]
+      technologies: ["React", "TypeScript", "Railway", "JavaScript", "REST APIs", "GitHub Actions", "Docker"]
+    },
+    {
+      company: "Vytal.AI",
+      position: "Software Engineer",
+      period: "May 2022 – Feb 2025",
+      location: "Alexandria, VA",
+      achievements: [
+        "Developed a mobile application that analyzes ocular biometrics using OpenCV and Next.js to quantify brain health in under 30 seconds.",
+        "Optimized Python pipelines and deployed ML models on AWS EC2 and MongoDB to scale to 300 clinical beta users.",
+        "Implemented OCR-driven PDF parsing using Agile methodologies like sprint cycles and stand-ups, decreasing the average processing time for uploaded health records by 90 seconds."
+      ],
+      technologies: ["OpenCV", "Next.js", "Python", "AWS EC2", "MongoDB", "Agile"]
     },
     {
       company: "Virginia Tech",
-      position: "Computer Science and Quantum Computing Researcher",
-      period: "April 2024 - May 2025",
-      location: "Blacksburg, Virginia",
-      description: "Conducted advanced research on quantum algorithms and their applications to computational problems under the guidance of Dr. Atul Mantri.",
+      position: "Computer Science Research Intern",
+      period: "Apr 2024 – Jan 2025",
+      location: "Blacksburg, VA",
       achievements: [
-        "Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks",
-        "Designed quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python",
-        "Achieved 65% reduction in computational cost compared to traditional classical recursive approaches"
+        "Spearheaded research with a team of 10+ developers to develop algorithms for constraint satisfaction problems in C# and Python, reducing computation time by up to 65% compared to standard recursive methods.",
+        "Implemented object-oriented programming architecture for nodes and edges, solving the graph coloring problem on a map of the United States in less than 25 seconds."
       ],
-      technologies: ["Python", "MATLAB", "Qiskit", "Q#", "Quantum Computing", "Algorithm Design"]
+      technologies: ["C#", "Python", "Algorithms", "OOP"]
     },
     {
-      company: "Youth International Digambar Jain Organization",
-      position: "President and Co-Founder",
-      period: "February 2022 - Present",
-      description: "Lead non-profit organization dedicated to education and community building centered on Jain philosophy and cultural values.",
+      company: "George Mason University",
+      position: "Machine Learning Research Intern",
+      period: "Jun 2023 – Jan 2024",
+      location: "Fairfax, VA",
       achievements: [
-        "Direct educational programming that teaches Jain principles including ahimsa (non-violence) and peace to over 150 students",
-        "Oversee fundraising initiatives that have secured more than $25,000 for the construction of a temple serving as a center for worship and cultural events in Northern Virginia"
+        "Published a first-author paper in the Journal of Student-Scientists' Research, introducing a web dashboard built with Flask and HTML/CSS to standardize five technical metrics for analyzing molecular dynamics simulations.",
+        "Visualized data for 20,000+ simulations with Matplotlib, cutting evaluation time from 12 hours to under 25 minutes."
       ],
-      technologies: []
+      technologies: ["Flask", "Python", "HTML/CSS", "Matplotlib", "Molecular Dynamics"]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 hero-gradient">
+    <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
@@ -86,7 +95,9 @@ const Experience = () => {
                       </div>
                     </div>
                   </div>
-                  <p className="text-base text-muted-foreground leading-relaxed">{exp.description}</p>
+                  {exp.description && (
+                    <p className="text-base text-muted-foreground leading-relaxed">{exp.description}</p>
+                  )}
                 </div>
 
                 {/* What I accomplished */}

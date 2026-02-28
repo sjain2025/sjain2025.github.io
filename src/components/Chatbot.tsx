@@ -87,41 +87,50 @@ const Chatbot = () => {
     },
     experience: [
       {
-        company: "Vytal.AI",
-        position: "Software and Machine Learning Engineer",
-        period: "May 2022 - December 2024",
-        location: "Alexandria, Virginia",
-        description: "Developed an AI-powered mobile application for rapid brain health assessment through state-of-the-art eye-tracking technology at a venture capital-backed startup.",
+        company: "ScottyLabs",
+        position: "Software Engineer",
+        period: "Aug 2025 – Present",
+        location: "Pittsburgh, PA",
         achievements: [
-          "Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations",
-          "Optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers",
-          "Engineered head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations"
+          "Integrate live data from Dining Services into CMUEats using React, TypeScript, and Railway, streamlining menus and specials for 10,000+ users each month across mobile and web.",
+          "Lead the development of a geospatial routing system with JavaScript and REST APIs to rank dining locations by walking distance, resulting in a 30-50% reduction in search time.",
+          "Automate CI/CD pipelines for 50+ developers with GitHub Actions and Docker to enforce linting and unit testing."
         ],
-        technologies: ["Python", "OpenCV", "React Native", "AWS EC2", "YOLOv8", "Machine Learning"]
+        technologies: ["React", "TypeScript", "Railway", "JavaScript", "REST APIs", "GitHub Actions", "Docker"]
+      },
+      {
+        company: "Vytal.AI",
+        position: "Software Engineer",
+        period: "May 2022 – Feb 2025",
+        location: "Alexandria, VA",
+        achievements: [
+          "Developed a mobile application that analyzes ocular biometrics using OpenCV and Next.js to quantify brain health in under 30 seconds.",
+          "Optimized Python pipelines and deployed ML models on AWS EC2 and MongoDB to scale to 300 clinical beta users.",
+          "Implemented OCR-driven PDF parsing using Agile methodologies, decreasing average processing time for uploaded health records by 90 seconds."
+        ],
+        technologies: ["OpenCV", "Next.js", "Python", "AWS EC2", "MongoDB", "Agile"]
       },
       {
         company: "Virginia Tech",
-        position: "Computer Science and Quantum Computing Researcher",
-        location: "Blacksburg, Virginia",
-        period: "April 2024 - May 2025",
-        description: "Conducted advanced research on quantum algorithms and their applications to computational problems under the guidance of Dr. Atul Mantri.",
+        position: "Computer Science Research Intern",
+        period: "Apr 2024 – Jan 2025",
+        location: "Blacksburg, VA",
         achievements: [
-          "Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks",
-          "Designed quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python",
-          "Achieved 65% reduction in computational cost compared to traditional classical recursive approaches"
+          "Spearheaded research with a team of 10+ developers on algorithms for constraint satisfaction problems in C# and Python, reducing computation time by up to 65% compared to standard recursive methods.",
+          "Implemented object-oriented programming architecture for nodes and edges, solving the graph coloring problem on a map of the United States in less than 25 seconds."
         ],
-        technologies: ["Python", "MATLAB", "Qiskit", "Q#", "Quantum Computing", "Algorithm Design"]
+        technologies: ["C#", "Python", "Algorithms", "OOP"]
       },
       {
-        company: "Youth International Digambar Jain Organization",
-        position: "President and Co-Founder",
-        period: "February 2022 - Present",
-        description: "Lead non-profit organization dedicated to education and community building centered on Jain philosophy and cultural values.",
+        company: "George Mason University",
+        position: "Machine Learning Research Intern",
+        period: "Jun 2023 – Jan 2024",
+        location: "Fairfax, VA",
         achievements: [
-          "Direct educational programming that teaches Jain principles including ahimsa (non-violence) and peace to over 150 students",
-          "Oversee fundraising initiatives that have secured more than $25,000 for the construction of a temple serving as a center for worship and cultural events in Northern Virginia"
+          "Published a first-author paper in the Journal of Student-Scientists' Research, introducing a web dashboard built with Flask and HTML/CSS to standardize five technical metrics for analyzing molecular dynamics simulations.",
+          "Visualized data for 20,000+ simulations with Matplotlib, cutting evaluation time from 12 hours to under 25 minutes."
         ],
-        technologies: ["Leadership", "Program Development", "Fundraising", "Community Engagement"]
+        technologies: ["Flask", "Python", "HTML/CSS", "Matplotlib", "Molecular Dynamics"]
       }
     ],
     projects: [
@@ -309,11 +318,9 @@ const Chatbot = () => {
       }
     ],
     skills: {
-      programmingLanguages: ["Python", "Java", "C++", "C", "TypeScript", "JavaScript", "HTML", "CSS", "SQL", "MATLAB"],
-      developerTools: ["Git", "Vim", "Visual Studio Code", "AWS EC2", "MongoDB", "Google Cloud", "Firebase", "Jupyter Notebook", "Android Studio", "Expo", "Figma"],
-      frameworks: ["React", "Vite", "Node.js", "Next.js", "Flask", "NumPy", "Pandas", "TensorFlow", "PyTorch", "Keras", "PostgreSQL", "OpenCV", "Tailwind CSS", "Express.js", "Scikit-learn"],
-      aiml: ["TensorFlow", "PyTorch", "Keras", "OpenCV", "Scikit-learn", "Pandas", "NumPy", "Computer Vision", "Deep Learning", "Neural Networks"],
-      webMobile: ["React", "React Native", "Next.js", "Vite", "Node.js", "Express.js", "Tailwind CSS", "HTML", "CSS", "TypeScript", "JavaScript"]
+      programmingLanguages: ["Python", "Java", "C/C++", "JavaScript", "TypeScript", "C#", "SQL", "HTML/CSS", "Kotlin", "Assembly"],
+      developerTools: ["Git", "Linux/Unix (Bash)", "Docker", "VS Code", "Railway", "AWS", "Google Cloud Platform", "Firebase", "MongoDB"],
+      frameworks: ["React", "Vite", "Node.js", "Flask", "Express", "Next.js", "OpenCV", "NumPy", "Pandas", "TensorFlow", "Keras"]
     },
     social: {
       linkedin: "https://www.linkedin.com/in/soham-jain1/",
@@ -342,7 +349,7 @@ const Chatbot = () => {
 
     // Professional experience queries
     if (message.includes('experience') || message.includes('work') || message.includes('job')) {
-      return `Soham has extensive professional experience:\n\n1. <strong>Vytal.AI</strong> (May 2022 - December 2024): Software and Machine Learning Engineer. Built smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations. Optimized Python-based biometric processing pipelines and deployed ML models on AWS EC2, scaling to 300+ clinical beta testers. Engineered head-gaze detection algorithm with YOLOv8 delivering 15% higher accuracy.\n\n2. <strong>Virginia Tech</strong> (April 2024 - May 2025): Computer Science and Quantum Computing Researcher. Led research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q#. Designed quantum-classical hybrid algorithm for graph coloring problem for all 50 U.S. states, achieving 65% reduction in computational cost.\n\n3. <strong>Youth International Digambar Jain Organization</strong> (Feb 2022 - Present): President and Co-Founder. Directs educational programming teaching Jain principles to 150+ students. Oversees fundraising initiatives securing $25,000+ for temple construction in Northern Virginia.`;
+      return `Soham's work experience:\n\n1. <strong>ScottyLabs</strong> (Aug 2025 – Present), Pittsburgh, PA — Software Engineer. Integrates live Dining Services data into CMUEats with React, TypeScript, and Railway for 10,000+ users monthly. Leads geospatial routing with JavaScript and REST APIs (30-50% faster search). Automates CI/CD for 50+ developers with GitHub Actions and Docker.\n\n2. <strong>Vytal.AI</strong> (May 2022 – Feb 2025), Alexandria, VA — Software Engineer. Built mobile app using OpenCV and Next.js for brain health in under 30 seconds. Deployed ML on AWS EC2 and MongoDB for 300 beta users. Implemented OCR-driven PDF parsing with Agile, cutting processing time by 90 seconds.\n\n3. <strong>Virginia Tech</strong> (Apr 2024 – Jan 2025), Blacksburg, VA — Computer Science Research Intern. Led algorithms for constraint satisfaction in C# and Python (65% faster). Solved graph coloring on a US map in under 25 seconds.\n\n4. <strong>George Mason University</strong> (Jun 2023 – Jan 2024), Fairfax, VA — Machine Learning Research Intern. First-author paper: Flask/HTML/CSS dashboard for molecular dynamics metrics. Matplotlib visualization cut evaluation from 12 hours to under 25 minutes for 20,000+ simulations.`;
     }
 
     // Project portfolio inquiries
@@ -362,7 +369,7 @@ const Chatbot = () => {
 
     // Technical expertise inquiries
     if (message.includes('skill') || message.includes('technology') || message.includes('programming') || message.includes('tech stack')) {
-      return `Soham's technical skills include:\n\n<strong>Programming Languages</strong>: Python, Java, C++, C, TypeScript, JavaScript, HTML, CSS, SQL, MATLAB\n\n<strong>Developer Tools</strong>: Git, Vim, Visual Studio Code, AWS EC2, MongoDB, Google Cloud, Firebase, Jupyter Notebook, Android Studio, Expo, Figma\n\n<strong>Libraries & Frameworks</strong>: React, Vite, Node.js, Next.js, Flask, NumPy, Pandas, TensorFlow, PyTorch, Keras, PostgreSQL, OpenCV, Tailwind CSS, Express.js, Scikit-learn\n\n<strong>AI/ML</strong>: TensorFlow, PyTorch, Keras, OpenCV, Scikit-learn, Computer Vision, Deep Learning, Neural Networks\n\n<strong>Web/Mobile Development</strong>: React, React Native, Next.js, Vite, Node.js, Express.js, Tailwind CSS`;
+      return `Soham's technical skills (from his resume):\n\n<strong>Languages</strong>: Python, Java, C/C++, JavaScript, TypeScript, C#, SQL, HTML/CSS, Kotlin, Assembly\n\n<strong>Developer Tools</strong>: Git, Linux/Unix (Bash), Docker, VS Code, Railway, AWS, Google Cloud Platform, Firebase, MongoDB\n\n<strong>Frameworks & Libraries</strong>: React, Vite, Node.js, Flask, Express, Next.js, OpenCV, NumPy, Pandas, TensorFlow, Keras`;
     }
 
     // Contact information queries
@@ -372,12 +379,17 @@ const Chatbot = () => {
 
     // Vytal.AI related inquiries
     if (message.includes('vytal') || message.includes('neuros')) {
-      return `Vytal.AI was a startup where Soham worked as a Software and Machine Learning Engineer from May 2022 to December 2024. He built a smartphone AI application using OpenCV and React Native to quantify brain health via 30-second eye-tracking evaluations. He optimized Python-based biometric processing pipelines and deployed machine learning models on AWS EC2, scaling the platform to support 300+ clinical beta testers. Soham engineered a head-gaze detection algorithm with YOLOv8 that delivered 15% higher accuracy compared to previous implementations.`;
+      return `Soham was a Software Engineer at Vytal.AI from May 2022 to Feb 2025 in Alexandria, VA. He developed a mobile application using OpenCV and Next.js to quantify brain health in under 30 seconds. He optimized Python pipelines and deployed ML models on AWS EC2 and MongoDB for 300 clinical beta users, and implemented OCR-driven PDF parsing with Agile, cutting health record processing time by 90 seconds.`;
     }
 
-    // Quantum computing research inquiries
-    if (message.includes('quantum') || message.includes('grover')) {
-      return `Soham conducted quantum computing research at Virginia Tech from April 2024 to May 2025, working with Dr. Atul Mantri on advanced quantum algorithms. He led a research initiative applying Grover's algorithm to boolean satisfiability problems using Qiskit and Q# frameworks. He designed a quantum-classical hybrid algorithm to solve the graph coloring problem for a map of all 50 U.S. states using MATLAB and Python, achieving a 65% reduction in computational cost compared to traditional classical recursive approaches.`;
+    // Virginia Tech research
+    if (message.includes('virginia tech') || message.includes('vt research')) {
+      return `At Virginia Tech (Apr 2024 – Jan 2025) as a Computer Science Research Intern in Blacksburg, VA, Soham led a team of 10+ developers on algorithms for constraint satisfaction problems in C# and Python, reducing computation time by up to 65% vs standard recursive methods. He implemented OOP architecture for nodes and edges and solved the graph coloring problem on a map of the United States in under 25 seconds.`;
+    }
+
+    // ScottyLabs / CMUEats
+    if (message.includes('scottylabs') || message.includes('cmueats')) {
+      return `Soham is a Software Engineer at ScottyLabs (Aug 2025 – Present) in Pittsburgh, PA. He integrates live Dining Services data into CMUEats with React, TypeScript, and Railway for 10,000+ users monthly. He leads geospatial routing with JavaScript and REST APIs (30-50% reduction in search time) and automates CI/CD for 50+ developers with GitHub Actions and Docker.`;
     }
 
     // General assistance response
