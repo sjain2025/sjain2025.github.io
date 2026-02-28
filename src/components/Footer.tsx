@@ -11,7 +11,6 @@ const Footer = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Research', href: '#research' },
-    { name: 'Awards', href: '#awards' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -107,7 +106,7 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center text-muted-foreground text-sm">
-            <span>Made using React, TypeScript & Tailwind CSS</span>
+            <span>Made using React, Vite, TypeScript, & Tailwind CSS</span>
           </div>
         </div>
       </div>
