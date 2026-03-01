@@ -1,19 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
-import { Github, Linkedin, Mail, Youtube } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, Youtube } from 'lucide-react';
 import profileImage from '@/assets/8898.jpg';
 import type { SectionView } from '@/pages/Index';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 const NAME_TYPEWRITER = 'Soham Jain';
 
 const INTRO_COMMAND = 'cat sections.txt';
 
 const CLICKABLE_SECTIONS: { id: SectionView; label: string; description: string }[] = [
-  { id: 'about', label: 'about', description: 'Resume / About' },
+  { id: 'about', label: 'about', description: 'Resume' },
   { id: 'skills', label: 'skills', description: 'Skills' },
   { id: 'experience', label: 'experience', description: 'Experience' },
   { id: 'projects', label: 'projects', description: 'Projects' },
   { id: 'research', label: 'research', description: 'Research' },
-  { id: 'contact', label: 'contact', description: 'Get in touch' },
+  { id: 'contact', label: 'contact', description: 'Contact' },
 ];
 
 type HeroProps = {
@@ -21,14 +23,14 @@ type HeroProps = {
 };
 
 const NAME_TYPING_DURATION_MS = 900; // a little faster, still smooth (linear)
-const TERMINAL_TYPING_MS = 80;
+const TERMINAL_TYPING_MS = 70;
 
 const Hero = ({ onSelectSection }: HeroProps) => {
   const [nameProgress, setNameProgress] = useState(0);
   const [terminalChars, setTerminalChars] = useState(0);
   const [showSections, setShowSections] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
-  const terminalScrollRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const nameStartRef = useRef<number | null>(null);
 
   // Name typing: linear progress so constant speed, no pausing (cursor looks like real typing)
@@ -49,26 +51,21 @@ const Hero = ({ onSelectSection }: HeroProps) => {
   const nameChars = Math.floor(nameProgress);
   const nameComplete = nameProgress >= NAME_TYPEWRITER.length;
 
-  // Terminal typing: start after name finishes, type command then show sections
+  // Terminal typing: start at same time as name, type command then show sections
   useEffect(() => {
-    if (!nameComplete) return;
     if (terminalChars < INTRO_COMMAND.length) {
       const t = setTimeout(() => setTerminalChars((c) => c + 1), TERMINAL_TYPING_MS);
       return () => clearTimeout(t);
     }
     const t = setTimeout(() => setShowSections(true), 400);
     return () => clearTimeout(t);
-  }, [nameComplete, terminalChars]);
+  }, [terminalChars]);
 
   // Blinking cursor
   useEffect(() => {
     const id = setInterval(() => setCursorVisible((v) => !v), 520);
     return () => clearInterval(id);
   }, []);
-
-  useEffect(() => {
-    terminalScrollRef.current?.scrollTo({ top: terminalScrollRef.current.scrollHeight, behavior: 'smooth' });
-  }, [terminalChars, showSections]);
 
   return (
     <section id="hero" className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden">
@@ -83,6 +80,51 @@ const Hero = ({ onSelectSection }: HeroProps) => {
           backgroundSize: '28px 28px',
         }}
       />
+
+      {/* Top-right nav menu: 3-line button opens dropdown below */}
+      <div className="fixed top-6 right-6 z-50">
+        <DropdownMenu open={menuOpen} onOpenChange={setMenuOpen}>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className={`h-11 w-11 rounded-xl border transition-all duration-200 aria-expanded:bg-slate-700/50 ${
+                menuOpen
+                  ? 'border-slate-500/60 bg-slate-700/50 text-slate-100'
+                  : 'border-slate-700/50 bg-slate-800/30 text-slate-300 hover:bg-slate-700/40 hover:border-slate-600/50 hover:text-slate-100'
+              }`}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {menuOpen ? (
+                <X className="h-5 w-5 transition-transform duration-200" />
+              ) : (
+                <Menu className="h-5 w-5 transition-transform duration-200" />
+              )}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            side="bottom"
+            align="end"
+            sideOffset={8}
+            className="min-w-[200px] rounded-2xl border-slate-700/50 bg-[#0f1115] p-2.5 shadow-xl"
+          >
+            {/* Keep keyframes in bundle */}
+            <div className="animate-nav-item-in animate-nav-item-breathe absolute opacity-0 pointer-events-none" aria-hidden />
+            <div className="flex flex-col gap-2">
+              {CLICKABLE_SECTIONS.map(({ id, label }, index) => (
+                <DropdownMenuItem
+                  key={id}
+                  onClick={() => onSelectSection(id)}
+                  className="rounded-xl border border-slate-700/40 bg-slate-800/40 px-4 py-3 text-[15px] font-medium text-slate-200 focus:bg-slate-700/50 focus:text-white focus:border-slate-600/60 focus:outline-none cursor-pointer [animation:nav-item-in_0.35s_ease-out_backwards,nav-item-breathe_2.5s_ease-in-out_0.4s_infinite]"
+                  style={{ animationDelay: `${80 + index * 40}ms, 400ms` }}
+                >
+                  {label.charAt(0).toUpperCase() + label.slice(1)}
+                </DropdownMenuItem>
+              ))}
+            </div>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center min-h-screen py-14">
         {/* "Hi, I'm" + name with smooth typing, red-to-blue gradient */}
@@ -113,10 +155,10 @@ const Hero = ({ onSelectSection }: HeroProps) => {
           </p>
         </div>
 
-        {/* Terminal + image — terminal takes more width, centered */}
-        <div className="flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-8 w-full">
+        {/* Terminal + image — narrower terminal, centered */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 w-full">
           <div
-            className="flex-1 min-w-0 rounded-2xl overflow-hidden border border-slate-600/50 bg-[#1e1e24] w-full"
+            className="w-full max-w-xl mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-slate-600/50 bg-[#1e1e24]"
             style={{
               boxShadow: '0 0 0 1px rgba(148, 163, 184, 0.08), 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 60px -10px rgba(59, 130, 246, 0.35), 0 0 100px -20px rgba(59, 130, 246, 0.2)',
             }}
@@ -129,9 +171,9 @@ const Hero = ({ onSelectSection }: HeroProps) => {
               </div>
               <span className="flex-1 text-center text-xs font-mono text-slate-400 tracking-wide">portfolio — zsh</span>
             </div>
-            <div ref={terminalScrollRef} className="p-5 sm:p-6 font-mono text-sm sm:text-base h-[360px] overflow-y-auto bg-[#1a1a1f]">
+            <div className="p-4 sm:p-5 font-mono text-sm sm:text-base h-[360px] overflow-hidden flex flex-col bg-[#1a1a1f]">
               {/* Terminal: type command character by character, then show sections */}
-              <div className="flex flex-wrap items-center gap-1 mb-3">
+              <div className="flex flex-wrap items-center gap-1 mb-2 shrink-0">
                 <span className="text-emerald-400 shrink-0">{'~'}</span>
                 <span className="text-slate-500 shrink-0">{' $ '}</span>
                 <span className="text-slate-100">{INTRO_COMMAND.slice(0, terminalChars)}</span>
@@ -144,17 +186,16 @@ const Hero = ({ onSelectSection }: HeroProps) => {
                 )}
               </div>
               {showSections && (
-                <div className="space-y-1.5 mt-2">
-                  {CLICKABLE_SECTIONS.map(({ id, label, description }) => (
+                <div className="flex-1 flex flex-col justify-center gap-1 mt-2 min-h-0">
+                  {CLICKABLE_SECTIONS.map(({ id, description }, index) => (
                     <button
                       key={id}
                       type="button"
                       onClick={() => onSelectSection(id)}
-                      className="block w-full text-left px-3 py-2.5 rounded-xl border border-transparent bg-transparent hover:bg-slate-700/40 hover:border-slate-600/50 transition-all duration-200 font-mono text-sm sm:text-base group"
+                      className="flex-1 min-h-0 flex items-center w-full text-left px-3 py-2 rounded-xl border border-transparent bg-transparent hover:bg-slate-700/40 hover:border-slate-600/50 transition-all duration-200 font-mono text-sm sm:text-base text-slate-300 hover:text-emerald-400 animate-terminal-item-in"
+                      style={{ animationDelay: `${index * 80}ms` }}
                     >
-                      <span className="text-emerald-400 group-hover:text-emerald-300">{label}</span>
-                      <span className="text-slate-500 mx-2">—</span>
-                      <span className="text-slate-300 group-hover:text-slate-100">{description}</span>
+                      {description}
                     </button>
                   ))}
                 </div>
