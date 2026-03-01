@@ -262,3 +262,15 @@
     transform: translate3d(0, -10px, 0);
   }
 }
+
+/* Smooth hero name reveal: each character fades in with slight rise */
+@keyframes hero-char-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.15em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
