@@ -30,7 +30,7 @@ const Skills = () => {
       iconKey: "Wrench" as const,
       skills: [
         { name: "Git", icon: <SiGit className="h-5 w-5" /> },
-        { name: "Linux/Unix (Bash)", icon: <SiLinux className="h-5 w-5" /> },
+        { name: "Linux/Unix", icon: <SiLinux className="h-5 w-5" /> },
         { name: "Docker", icon: <SiDocker className="h-5 w-5" /> },
         { name: "VS Code", icon: <Code2 className="h-5 w-5" /> },
         { name: "Railway", icon: <SiRailway className="h-5 w-5" /> },
