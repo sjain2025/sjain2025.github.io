@@ -14,7 +14,7 @@ export type SectionView = 'hero' | 'about' | 'skills' | 'experience' | 'projects
 
 const MENU_ITEMS: { id: SectionView; label: string }[] = [
   { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
+  { id: 'about', label: 'Resume' },
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },

@@ -21,7 +21,7 @@ type HeroProps = {
 };
 
 const NAME_TYPING_DURATION_MS = 900; // a little faster, still smooth (linear)
-const TERMINAL_TYPING_MS = 70;
+const TERMINAL_TYPING_MS = 50;
 
 const Hero = ({ onSelectSection }: HeroProps) => {
   const [nameProgress, setNameProgress] = useState(0);
