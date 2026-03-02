@@ -29,12 +29,9 @@ git push -u origin main
 npm run deploy
 ```
 
-## What technologies are used for this project?
+## Technologies
 
-This project is built with:
-
+- React
 - Vite
 - TypeScript
-- React
 - Tailwind CSS
-- more...
