@@ -195,6 +195,17 @@
     will-change: transform;
   }
 
+  /* Skills section: staggered row entrance */
+  .animate-skills-row {
+    animation: skills-row-in 0.36s cubic-bezier(0.22, 1, 0.36, 1) both;
+    will-change: transform, opacity;
+  }
+
+  /* Slightly snappier than global fade-up; fill fixes stagger delays */
+  .skills-section .animate-fade-up {
+    animation: fade-up 0.45s ease-out both;
+  }
+
   /* Optimized background image loading */
   .hero-bg {
     background-size: cover;
@@ -213,6 +224,31 @@
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes skills-row-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-skills-row {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .skills-section .animate-fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

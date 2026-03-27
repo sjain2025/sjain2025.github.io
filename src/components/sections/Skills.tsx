@@ -1,122 +1,226 @@
-import { Code2, Wrench, Package } from 'lucide-react';
-import { SiPython, SiJavascript, SiReact, SiTensorflow, SiNodedotjs, SiTypescript, SiCplusplus, SiHtml5, SiCss3, SiMysql, SiFlask, SiExpress, SiFirebase, SiC, SiGit, SiMongodb, SiGooglecloud, SiVite, SiKeras, SiNextdotjs, SiNumpy, SiPandas, SiOpencv, SiSharp, SiKotlin, SiDocker, SiRailway, SiAmazon, SiLinux } from 'react-icons/si';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { Code2 } from 'lucide-react';
+import {
+  SiPython,
+  SiJavascript,
+  SiReact,
+  SiTensorflow,
+  SiNodedotjs,
+  SiTypescript,
+  SiCplusplus,
+  SiHtml5,
+  SiMysql,
+  SiFlask,
+  SiExpress,
+  SiFirebase,
+  SiGit,
+  SiMongodb,
+  SiGooglecloud,
+  SiVite,
+  SiKeras,
+  SiNextdotjs,
+  SiNumpy,
+  SiPandas,
+  SiOpencv,
+  SiSharp,
+  SiKotlin,
+  SiDocker,
+  SiRailway,
+  SiAmazon,
+  SiLinux,
+} from 'react-icons/si';
+import { cn } from '@/lib/utils';
 
-const categoryIcons = {
-  Code2,
-  Wrench,
-  Package,
-};
+type SkillItem = { name: string; icon: ReactNode; colorClass: string; lucide?: boolean };
 
 const Skills = () => {
-  const skillCategories = [
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  const skillCategories: { category: string; skills: SkillItem[] }[] = [
     {
-      category: "Programming Languages",
-      iconKey: "Code2" as const,
+      category: 'Programming Languages',
       skills: [
-        { name: "Python", icon: <SiPython className="h-5 w-5" /> },
-        { name: "Java", icon: <Code2 className="h-5 w-5" /> },
-        { name: "C/C++", icon: <SiCplusplus className="h-5 w-5" /> },
-        { name: "JavaScript", icon: <SiJavascript className="h-5 w-5" /> },
-        { name: "TypeScript", icon: <SiTypescript className="h-5 w-5" /> },
-        { name: "C#", icon: <SiSharp className="h-5 w-5" /> },
-        { name: "SQL", icon: <SiMysql className="h-5 w-5" /> },
-        { name: "HTML/CSS", icon: <SiHtml5 className="h-5 w-5" /> },
-        { name: "Kotlin", icon: <SiKotlin className="h-5 w-5" /> },
-        { name: "Assembly", icon: <Code2 className="h-5 w-5" /> }
-      ]
+        { name: 'Python', icon: <SiPython />, colorClass: 'text-[#3776AB]' },
+        { name: 'Java', icon: <Code2 />, colorClass: 'text-[#E76F00]', lucide: true },
+        { name: 'C/C++', icon: <SiCplusplus />, colorClass: 'text-[#00599C]' },
+        { name: 'JavaScript', icon: <SiJavascript />, colorClass: 'text-[#E8D44D]' },
+        { name: 'TypeScript', icon: <SiTypescript />, colorClass: 'text-[#3178C6]' },
+        { name: 'C#', icon: <SiSharp />, colorClass: 'text-[#512BD4]' },
+        { name: 'SQL', icon: <SiMysql />, colorClass: 'text-[#4479A1]' },
+        { name: 'HTML/CSS', icon: <SiHtml5 />, colorClass: 'text-[#E34F26]' },
+        { name: 'Kotlin', icon: <SiKotlin />, colorClass: 'text-[#7F52FF]' },
+        { name: 'Assembly', icon: <Code2 />, colorClass: 'text-zinc-400', lucide: true },
+      ],
     },
     {
-      category: "Developer Tools",
-      iconKey: "Wrench" as const,
+      category: 'Developer Tools',
       skills: [
-        { name: "Git", icon: <SiGit className="h-5 w-5" /> },
-        { name: "Linux/Unix", icon: <SiLinux className="h-5 w-5" /> },
-        { name: "Docker", icon: <SiDocker className="h-5 w-5" /> },
-        { name: "VS Code", icon: <Code2 className="h-5 w-5" /> },
-        { name: "Railway", icon: <SiRailway className="h-5 w-5" /> },
-        { name: "AWS", icon: <SiAmazon className="h-5 w-5" /> },
-        { name: "Google Cloud", icon: <SiGooglecloud className="h-5 w-5" /> },
-        { name: "Firebase", icon: <SiFirebase className="h-5 w-5" /> },
-        { name: "MongoDB", icon: <SiMongodb className="h-5 w-5" /> }
-      ]
+        { name: 'Git', icon: <SiGit />, colorClass: 'text-[#F05032]' },
+        { name: 'Linux/Unix', icon: <SiLinux />, colorClass: 'text-[#FCC624]' },
+        { name: 'Docker', icon: <SiDocker />, colorClass: 'text-[#2496ED]' },
+        { name: 'VS Code', icon: <Code2 />, colorClass: 'text-[#007ACC]', lucide: true },
+        { name: 'Railway', icon: <SiRailway />, colorClass: 'text-[#B026FF]' },
+        { name: 'AWS', icon: <SiAmazon />, colorClass: 'text-[#FF9900]' },
+        {
+          name: 'Google Cloud Platform',
+          icon: <SiGooglecloud />,
+          colorClass: 'text-[#4285F4]',
+        },
+        { name: 'Firebase', icon: <SiFirebase />, colorClass: 'text-[#FFCA28]' },
+        { name: 'MongoDB', icon: <SiMongodb />, colorClass: 'text-[#47A248]' },
+      ],
     },
     {
-      category: "Frameworks & Libraries",
-      iconKey: "Package" as const,
+      category: 'Frameworks & Libraries',
       skills: [
-        { name: "React", icon: <SiReact className="h-5 w-5" /> },
-        { name: "Vite", icon: <SiVite className="h-5 w-5" /> },
-        { name: "Node.js", icon: <SiNodedotjs className="h-5 w-5" /> },
-        { name: "Flask", icon: <SiFlask className="h-5 w-5" /> },
-        { name: "Express", icon: <SiExpress className="h-5 w-5" /> },
-        { name: "Next.js", icon: <SiNextdotjs className="h-5 w-5" /> },
-        { name: "OpenCV", icon: <SiOpencv className="h-5 w-5" /> },
-        { name: "NumPy", icon: <SiNumpy className="h-5 w-5" /> },
-        { name: "Pandas", icon: <SiPandas className="h-5 w-5" /> },
-        { name: "TensorFlow", icon: <SiTensorflow className="h-5 w-5" /> },
-        { name: "Keras", icon: <SiKeras className="h-5 w-5" /> }
-      ]
-    }
+        { name: 'React', icon: <SiReact />, colorClass: 'text-[#61DAFB]' },
+        { name: 'Vite', icon: <SiVite />, colorClass: 'text-[#646CFF]' },
+        { name: 'Node.js', icon: <SiNodedotjs />, colorClass: 'text-[#339933]' },
+        { name: 'Flask', icon: <SiFlask />, colorClass: 'text-zinc-200' },
+        { name: 'Express', icon: <SiExpress />, colorClass: 'text-zinc-400' },
+        { name: 'Next.js', icon: <SiNextdotjs />, colorClass: 'text-zinc-100' },
+        { name: 'OpenCV', icon: <SiOpencv />, colorClass: 'text-[#5C3EE8]' },
+        { name: 'NumPy', icon: <SiNumpy />, colorClass: 'text-[#4DABC2]' },
+        { name: 'Pandas', icon: <SiPandas />, colorClass: 'text-[#A15BB4]' },
+        { name: 'TensorFlow', icon: <SiTensorflow />, colorClass: 'text-[#FF6F00]' },
+        { name: 'Keras', icon: <SiKeras />, colorClass: 'text-[#D00000]' },
+      ],
+    },
   ];
 
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-card">
-      {/* Subtle grid background */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+    <section
+      ref={sectionRef}
+      id="skills"
+      className="skills-section relative overflow-hidden bg-background py-20"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary) / 0.5) 1px, transparent 1px),
-                            linear-gradient(90deg, hsl(var(--primary) / 0.5) 1px, transparent 1px)`,
-          backgroundSize: '48px 48px'
+          backgroundImage: `
+            linear-gradient(rgba(148, 163, 184, 0.35) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(148, 163, 184, 0.35) 1px, transparent 1px)
+          `,
+          backgroundSize: '28px 28px',
         }}
       />
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Technical <span className="text-gradient">Skills</span>
-            </h2>
-          </div>
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2
+            className={cn(
+              'mb-12 text-center text-4xl font-bold md:mb-14 md:text-5xl',
+              visible && 'animate-fade-up',
+              !visible && 'opacity-0'
+            )}
+            style={visible ? { animationDelay: '0ms' } : undefined}
+          >
+            Technical <span className="text-gradient">Skills</span>
+          </h2>
 
-          <div className="space-y-12">
-            {skillCategories.map((category, index) => {
-              const IconComponent = categoryIcons[category.iconKey];
-              return (
-                <div
-                  key={category.category}
-                  className="group animate-fade-up"
-                  style={{ animationDelay: `${index * 0.08}s` }}
-                >
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary border border-primary/20 group-hover:bg-primary/15 group-hover:border-primary/30 transition-all duration-300">
-                      <IconComponent className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground tracking-tight">
-                      {category.category}
+          <div
+            className={cn(
+              'card-gradient rounded-2xl border border-border/80 p-8 shadow-medium md:p-10 lg:p-12',
+              visible && 'animate-fade-up',
+              !visible && 'opacity-0'
+            )}
+            style={visible ? { animationDelay: '0.05s' } : undefined}
+          >
+            <div className="grid gap-12 lg:grid-cols-3 lg:gap-0">
+              {skillCategories.map((cat, colIndex) => {
+                const skillsBefore = skillCategories
+                  .slice(0, colIndex)
+                  .reduce((sum, c) => sum + c.skills.length, 0);
+
+                return (
+                  <div
+                    key={cat.category}
+                    className={
+                      colIndex === 0
+                        ? 'lg:pr-10 xl:pr-14'
+                        : 'lg:border-l lg:border-border/60 lg:pl-10 xl:pl-14'
+                    }
+                  >
+                    <h3
+                      className={cn(
+                        'mb-6 border-b border-border/60 pb-3 text-xl font-bold tracking-tight text-foreground',
+                        visible && 'animate-fade-up',
+                        !visible && 'opacity-0'
+                      )}
+                      style={
+                        visible ? { animationDelay: `${0.1 + colIndex * 0.08}s` } : undefined
+                      }
+                    >
+                      {cat.category}
                     </h3>
+                    <ul className="space-y-3">
+                      {cat.skills.map((skill, skillIdx) => {
+                        const i = skillsBefore + skillIdx;
+                        const delay =
+                          visible ? `${0.16 + colIndex * 0.03 + i * 0.022}s` : undefined;
+                        return (
+                          <li key={skill.name}>
+                            <div
+                              className={cn(
+                                'group flex items-center gap-3.5 rounded-lg py-0.5 transition-transform duration-200 ease-out hover:translate-x-1',
+                                visible && 'animate-skills-row',
+                                !visible && 'opacity-0'
+                              )}
+                              style={visible ? { animationDelay: delay } : undefined}
+                            >
+                              <span
+                                className={cn(
+                                  'flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md border border-border/60 bg-background/50 transition-colors duration-200 hover:border-border/80 [&_svg]:h-[1.05rem] [&_svg]:w-[1.05rem] group-hover:scale-105 group-hover:shadow-sm',
+                                  skill.lucide
+                                    ? '[&_svg]:fill-none [&_svg]:stroke-current'
+                                    : '[&_svg]:fill-current',
+                                  skill.colorClass
+                                )}
+                                aria-hidden
+                              >
+                                {skill.icon}
+                              </span>
+                              <span className="text-[15px] font-medium leading-snug text-foreground/90 transition-colors duration-200 group-hover:text-foreground">
+                                {skill.name}
+                              </span>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                    {category.skills.map((skill, i) => (
-                      <div
-                        key={skill.name}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card/80 border border-border/80 text-foreground hover:border-primary/40 hover:bg-primary/5 hover:shadow-lg hover:shadow-primary/5 transition-all duration-200 cursor-default"
-                        style={{
-                          animationDelay: `${(index * 0.05 + i * 0.02)}s`
-                        }}
-                      >
-                        <span className="flex-shrink-0 text-primary [&>svg]:stroke-[0.5]">
-                          {skill.icon}
-                        </span>
-                        <span className="font-medium text-sm truncate">
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
