@@ -27,37 +27,35 @@ const Resume = () => {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        {/* Page title */}
-        <div className="text-center mb-10 lg:mb-12">
+      <div className="relative z-10 flex w-full max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="mb-10 w-full text-center lg:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
             Resume
           </h2>
         </div>
 
-        {/* Resume PDF and sidebar */}
-        <div className="grid lg:grid-cols-[minmax(0,2.2fr)_minmax(0,0.8fr)] gap-6 lg:gap-8 items-start">
-          {/* Embedded resume PDF */}
-          <div className="lg:col-span-1">
-            <div
-              className="rounded-2xl overflow-hidden border border-slate-600/50 bg-[#1e1e24]"
-              style={{
-                boxShadow:
-                  '0 0 0 1px rgba(148, 163, 184, 0.08), 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 60px -10px rgba(59, 130, 246, 0.35), 0 0 100px -20px rgba(59, 130, 246, 0.2)',
-              }}
-            >
-              <div className="flex items-center justify-between px-5 py-3 border-b border-slate-700/60 bg-[#2d2d2d]">
-                <div className="flex items-center gap-3">
-                  <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                  </div>
-                  <div className="flex items-center gap-2 text-xs sm:text-sm font-mono text-slate-300">
-                    <FileText className="h-4 w-4 text-blue-400" />
-                    <span>Soham_Jain_Resume.pdf</span>
-                  </div>
+        <div className="mx-auto w-[min(100%,57rem)]">
+          <div
+            className="rounded-2xl overflow-hidden border border-slate-600/50 bg-[#1e1e24]"
+            style={{
+              boxShadow:
+                '0 0 0 1px rgba(148, 163, 184, 0.08), 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 60px -10px rgba(59, 130, 246, 0.35), 0 0 100px -20px rgba(59, 130, 246, 0.2)',
+            }}
+          >
+            <div className="relative flex min-h-12 items-center border-b border-slate-700/60 bg-[#2d2d2d] px-4 py-3 sm:px-5">
+              <div className="relative z-10 flex gap-1.5">
+                <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+              </div>
+              {/* True horizontal center of the bar (ignores uneven left/right control widths) */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-24 sm:px-28">
+                <div className="pointer-events-auto flex max-w-full min-w-0 items-center justify-center gap-2 text-sm font-medium text-slate-200">
+                  <FileText className="h-4 w-4 shrink-0 text-slate-200" aria-hidden />
+                  <span className="truncate">Soham_Jain_Resume.pdf</span>
                 </div>
+              </div>
+              <div className="relative z-10 ml-auto shrink-0">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -68,41 +66,14 @@ const Resume = () => {
                   Download
                 </Button>
               </div>
-              <div className="relative bg-[#111118]" style={{ height: '1075px' }}>
-                <iframe
-                  src={`${resumePdf}#toolbar=0&navpanes=0&scrollbar=0`}
-                  className="w-full h-full border-0"
-                  title="Soham Jain Resume"
-                  loading="lazy"
-                />
-              </div>
             </div>
-          </div>
-
-          {/* Download options */}
-          <div className="space-y-6 lg:space-y-7">
-            {/* Download resume card */}
-            <div
-              className="rounded-2xl p-6 sm:p-7 border border-slate-600/50 bg-[#1e1e24]"
-              style={{
-                boxShadow:
-                  '0 0 0 1px rgba(148, 163, 184, 0.08), 0 20px 40px -18px rgba(0, 0, 0, 0.75)',
-              }}
-            >
-              <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-100">
-                <Download className="h-5 w-5 text-blue-400" />
-                Download Resume
-              </h3>
-              <p className="text-sm text-slate-400 mb-4">
-                Save a high-resolution PDF version of my resume.
-              </p>
-              <Button
-                onClick={handleDownload}
-                className="w-full bg-gradient-to-r from-red-500 via-red-400 to-blue-500 text-white font-medium hover:from-red-400 hover:via-red-300 hover:to-blue-400 hover:scale-[1.02] transition-all duration-200 shadow-lg"
-              >
-                <Download className="h-4 w-4 mr-2" />
-                Download PDF
-              </Button>
+            <div className="relative bg-[#111118]" style={{ height: '1075px' }}>
+              <iframe
+                src={`${resumePdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                className="w-full h-full border-0"
+                title="Soham Jain Resume"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
