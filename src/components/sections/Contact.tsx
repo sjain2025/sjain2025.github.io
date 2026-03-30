@@ -131,7 +131,7 @@ const Contact = () => {
               type="submit"
               size="default"
               disabled={state.submitting}
-              className="w-full bg-gradient-to-r from-red-500 to-blue-500 text-white font-semibold border-0 hover:opacity-90 hover:scale-[1.01] transition-all duration-200 rounded-xl"
+              className="w-full border-0 primary-gradient font-medium text-primary-foreground shadow-md shadow-primary/25 transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/30 disabled:pointer-events-none disabled:opacity-50 disabled:hover:scale-100 rounded-xl"
             >
               {state.submitting ? (
                 <>

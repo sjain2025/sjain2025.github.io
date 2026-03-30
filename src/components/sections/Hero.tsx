@@ -1,29 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Github, Linkedin, Mail, Youtube } from 'lucide-react';
 import profileImage from '@/assets/8898.jpg';
-import type { SectionView } from '@/pages/Index';
+import { HERO_SECTION_LINKS } from '@/lib/siteRoutes';
 
 const NAME_TYPEWRITER = 'Soham Jain';
 
 const INTRO_COMMAND = 'cat sections.txt';
 
-const CLICKABLE_SECTIONS: { id: SectionView; label: string; description: string }[] = [
-  { id: 'about', label: 'about', description: 'Resume' },
-  { id: 'skills', label: 'skills', description: 'Skills' },
-  { id: 'experience', label: 'experience', description: 'Experience' },
-  { id: 'projects', label: 'projects', description: 'Projects' },
-  { id: 'research', label: 'research', description: 'Research' },
-  { id: 'contact', label: 'contact', description: 'Contact' },
-];
-
-type HeroProps = {
-  onSelectSection: (section: SectionView) => void;
-};
-
 const NAME_TYPING_DURATION_MS = 900; // a little faster, still smooth (linear)
 const TERMINAL_TYPING_MS = 50;
 
-const Hero = ({ onSelectSection }: HeroProps) => {
+const Hero = () => {
+  const navigate = useNavigate();
   const [nameProgress, setNameProgress] = useState(0);
   const [terminalChars, setTerminalChars] = useState(0);
   const [showSections, setShowSections] = useState(false);
@@ -129,21 +118,24 @@ const Hero = ({ onSelectSection }: HeroProps) => {
                 <span className="text-emerald-400 shrink-0">{'~'}</span>
                 <span className="text-slate-500 shrink-0">{' $ '}</span>
                 <span className="text-slate-100">{INTRO_COMMAND.slice(0, terminalChars)}</span>
-                {terminalChars < INTRO_COMMAND.length && (
+                {terminalChars <= INTRO_COMMAND.length && (
                   <span
                     className={`inline-block w-1 h-4 align-middle bg-emerald-400 ml-0.5 ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}
-                    style={{ transition: 'opacity 0.15s ease-out', transform: 'translateY(-2px)' }}
+                    style={{
+                      transition: 'opacity 0.15s ease-out',
+                      transform: 'translate(-0.5px, -1px)',
+                    }}
                     aria-hidden
                   />
                 )}
               </div>
               {showSections && (
                 <div className="flex-1 flex flex-col justify-center gap-1 mt-2 min-h-0">
-                  {CLICKABLE_SECTIONS.map(({ id, description }, index) => (
+                  {HERO_SECTION_LINKS.map(({ to, description }, index) => (
                     <button
-                      key={id}
+                      key={to}
                       type="button"
-                      onClick={() => onSelectSection(id)}
+                      onClick={() => navigate(to)}
                       className="flex-1 min-h-0 flex items-center w-full text-left px-3 py-2 rounded-xl border border-transparent bg-transparent hover:bg-slate-700/40 hover:border-slate-600/50 transition-all duration-200 font-mono text-sm sm:text-base text-slate-300 hover:text-emerald-400 animate-terminal-item-in"
                       style={{ animationDelay: `${index * 80}ms` }}
                     >

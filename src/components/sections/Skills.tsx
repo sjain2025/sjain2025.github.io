@@ -138,13 +138,13 @@ const Skills = () => {
         <div className="mx-auto max-w-6xl">
           <h2
             className={cn(
-              'mb-12 text-center text-4xl font-bold md:mb-14 md:text-5xl',
+              'mb-12 text-center text-4xl font-bold text-white md:mb-14 md:text-5xl',
               visible && 'animate-fade-up',
               !visible && 'opacity-0'
             )}
             style={visible ? { animationDelay: '0ms' } : undefined}
           >
-            Technical <span className="text-gradient">Skills</span>
+            Technical Skills
           </h2>
 
           <div

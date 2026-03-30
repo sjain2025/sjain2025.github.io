@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* About section with social links */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-gradient mb-4">Soham Jain</h3>
+            <h3 className="mb-4 text-2xl font-bold text-white">Soham Jain</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
               Computer Science at Carnegie Mellon University, software engineer, AI researcher, 
               and innovator.

@@ -98,8 +98,8 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-card">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="mb-16 text-center text-4xl font-bold text-white md:text-5xl">
+            Featured Projects
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-8">

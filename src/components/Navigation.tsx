@@ -38,7 +38,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('#hero')}
-            className="text-xl font-bold text-gradient hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="cursor-pointer text-xl font-bold text-white transition-transform duration-300 hover:scale-105"
           >
             Soham Jain
           </button>

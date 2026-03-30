@@ -29,7 +29,7 @@ const Resume = () => {
 
       <div className="relative z-10 flex w-full max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="mb-10 w-full text-center lg:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
             Resume
           </h2>
         </div>

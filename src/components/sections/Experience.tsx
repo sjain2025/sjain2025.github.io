@@ -64,8 +64,8 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Work <span className="text-gradient">Experience</span>
+          <h2 className="mb-16 text-center text-4xl font-bold text-white md:text-5xl">
+            Work Experience
           </h2>
 
           <div className="space-y-8">
