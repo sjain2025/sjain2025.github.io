@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, Linkedin, Mail, Youtube } from 'lucide-react';
 import profileImage from '@/assets/8898.jpg';
@@ -18,6 +18,27 @@ const Hero = () => {
   const [showSections, setShowSections] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
   const nameStartRef = useRef<number | null>(null);
+  const nameMeasureRef = useRef<HTMLSpanElement>(null);
+  const [nameGradientWidthPx, setNameGradientWidthPx] = useState<number>();
+
+  const updateNameGradientWidth = useCallback(() => {
+    const el = nameMeasureRef.current;
+    if (el) setNameGradientWidthPx(el.offsetWidth);
+  }, []);
+
+  // Lock gradient to final "Soham Jain" width so it does not rescale (and look lighter) as the span grows.
+  useLayoutEffect(() => {
+    updateNameGradientWidth();
+    void document.fonts?.ready?.then(updateNameGradientWidth);
+  }, [updateNameGradientWidth]);
+
+  useEffect(() => {
+    const el = nameMeasureRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(() => updateNameGradientWidth());
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [updateNameGradientWidth]);
 
   // Name typing: linear progress so constant speed, no pausing (cursor looks like real typing)
   useEffect(() => {
@@ -35,7 +56,6 @@ const Hero = () => {
   }, []);
 
   const nameChars = Math.floor(nameProgress);
-  const nameComplete = nameProgress >= NAME_TYPEWRITER.length;
 
   // Terminal typing: start at same time as name, type command then show sections
   useEffect(() => {
@@ -70,9 +90,26 @@ const Hero = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center min-h-screen py-14">
         {/* "Hi, I'm" + name with smooth typing, red-to-blue gradient */}
         <div className="text-center mb-8 lg:mb-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
+          <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
+            <span
+              ref={nameMeasureRef}
+              className="absolute left-0 top-0 select-none whitespace-nowrap opacity-0 pointer-events-none"
+              aria-hidden
+            >
+              {NAME_TYPEWRITER}
+            </span>
             <span className="text-slate-300">Hi, I'm </span>
-            <span className="bg-gradient-to-r from-red-500 via-red-400 to-blue-500 bg-clip-text text-transparent">
+            <span
+              className="inline-block bg-gradient-to-r from-red-500 via-red-400 to-blue-500 bg-clip-text text-transparent bg-no-repeat [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
+              style={
+                nameGradientWidthPx != null
+                  ? {
+                      backgroundSize: `${nameGradientWidthPx}px 100%`,
+                      backgroundPosition: 'left center',
+                    }
+                  : undefined
+              }
+            >
               {NAME_TYPEWRITER.slice(0, nameChars)}
             </span>
             <span
